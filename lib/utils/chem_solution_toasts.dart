@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../themes/main_theme.dart';
 
-class BroqerlyToast {
+class ChemSolutionToasts {
   final BuildContext context;
 
-  BroqerlyToast.of(this.context);
+  ChemSolutionToasts.of(this.context);
 
   SnackBar _buildSnackBar({
     required String message,

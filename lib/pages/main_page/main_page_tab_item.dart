@@ -36,4 +36,8 @@ extension MainPageTabItemExt on MainPageTabItem {
         return locatizations.myProfile;
     }
   }
+
+  bool get hasSearchButton {
+    return this != MainPageTabItem.myProfile;
+  }
 }

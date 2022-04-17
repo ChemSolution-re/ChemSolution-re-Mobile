@@ -5,7 +5,6 @@ import 'package:chem_solution/l10n/chem_solution_localizations.dart';
 import 'package:chem_solution/services/preferences_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 
 import '../../di/locator.dart';
 import '../../exceptions/api_exception.dart';

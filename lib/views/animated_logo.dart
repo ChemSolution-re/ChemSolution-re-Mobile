@@ -61,7 +61,7 @@ class _AnimatedLogoState extends State<AnimatedLogo>
             child: Opacity(
               opacity: _fadeController.value,
               child: Image.asset(
-                AppImageAssets.logo,
+                AppImageAssets.atom,
                 height: widget.height,
               ),
             ),

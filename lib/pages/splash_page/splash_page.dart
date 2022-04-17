@@ -21,7 +21,9 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
     _exitTimer = Timer(
       const Duration(seconds: 3),
-      () => Navigator.of(context).pushReplacement(MainPage.getRoute()),
+      () => Navigator.of(context).pushReplacement(
+        MainPage.getRoute(),
+      ),
     );
   }
 
@@ -36,7 +38,9 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: MainTheme.color(context).primaryBackground,
       body: const Center(
-        child: AnimatedLogo(),
+        child: AnimatedLogo(
+          height: 200,
+        ),
       ),
     );
   }

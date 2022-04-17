@@ -1,0 +1,7 @@
+{
+    "@@locale": "uk",
+    "appName": "ChemSolution",
+    "generalAppErrorMessage": "Сталася помилка з боку мобільного клієнту",
+    "errorIntenetConnection": "Помилка підключення до Інтернету",
+    "serverErrorMessage": "Сталася серверна помилка"
+}

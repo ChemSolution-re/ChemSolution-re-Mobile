@@ -1,0 +1,235 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "chem_solution: generate metrics",
+            "type": "shell",
+            "command": "flutter",
+            "group": "build",
+            "runOptions": {
+                "instanceLimit": 1,
+                "reevaluateOnRerun": false
+            },
+            "args": [
+                "pub",
+                "run",
+                "dart_code_metrics:metrics",
+                "analyze",
+                "lib",
+                "--reporter=html"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "chem_solution: generate native splash",
+            "type": "shell",
+            "command": "flutter",
+            "group": "build",
+            "runOptions": {
+                "instanceLimit": 1,
+                "reevaluateOnRerun": false
+            },
+            "args": [
+                "pub",
+                "run",
+                "flutter_native_splash:create"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "chem_solution: run tests",
+            "type": "shell",
+            "command": "flutter",
+            "group": "build",
+            "runOptions": {
+                "instanceLimit": 1,
+                "reevaluateOnRerun": false
+            },
+            "args": [
+                "test"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "chem_solution: analyze",
+            "type": "shell",
+            "command": "flutter",
+            "group": "build",
+            "runOptions": {
+                "instanceLimit": 1,
+                "reevaluateOnRerun": false
+            },
+            "args": [
+                "analyze"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "chem_solution: clean",
+            "type": "shell",
+            "command": "flutter",
+            "group": "build",
+            "runOptions": {
+                "instanceLimit": 1,
+                "reevaluateOnRerun": false
+            },
+            "args": [
+                "clean"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "chem_solution: dependencies",
+            "type": "shell",
+            "command": "flutter",
+            "group": "build",
+            "runOptions": {
+                "instanceLimit": 1,
+                "reevaluateOnRerun": false
+            },
+            "args": [
+                "pub",
+                "get"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "chem_solution: build",
+            "type": "shell",
+            "command": "flutter",
+            "group": "build",
+            "runOptions": {
+                "instanceLimit": 1,
+                "reevaluateOnRerun": false
+            },
+            "args": [
+                "pub",
+                "run",
+                "build_runner",
+                "build",
+                "--delete-conflicting-outputs"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "chem_solution: localize",
+            "type": "shell",
+            "command": "flutter",
+            "group": "build",
+            "options": {
+                "cwd": "${cwd}"
+            },
+            "runOptions": {
+                "instanceLimit": 1,
+                "reevaluateOnRerun": false
+            },
+            "args": [
+                "gen-l10n",
+                "--arb-dir=lib/l10n",
+                "--template-arb-file=chem_solution_uk.arb",
+                "--no-synthetic-package",
+                "--output-dir=lib/l10n",
+                "--output-class=ChemSolutionLocalizations",
+                "--output-localization-file=chem_solution_localizations.dart",
+                "--preferred-supported-locales='uk'",
+                "--untranslated-messages-file=lib/l10n/missing_localizations.json"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "chem_solution: rebuild",
+            "detail": "Clean and Rebuild App",
+            "group": "build",
+            "options": {
+                "cwd": "${cwd}"
+            },
+            "dependsOn": [
+                "chem_solution: clean",
+                "chem_solution: dependencies",
+                "chem_solution: build",
+                "chem_solution: localize"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        },
+        {
+            "label": "chem_solution: create new launch icons",
+            "type": "shell",
+            "command": "flutter",
+            "group": "build",
+            "runOptions": {
+                "instanceLimit": 1,
+                "reevaluateOnRerun": false
+            },
+            "args": [
+                "pub",
+                "run",
+                "flutter_launcher_icons:main"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+    ]
+}

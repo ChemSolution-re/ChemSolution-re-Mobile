@@ -1,3 +1,4 @@
+import 'package:chem_solution/pages/main_page/main_page.dart';
 import 'package:chem_solution/themes/light/light_theme.dart';
 import 'package:chem_solution/utils/chem_solution_toasts.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class ChemSolutionApp extends StatelessWidget {
                 localizationsDelegates:
                     ChemSolutionLocalizations.localizationsDelegates,
                 supportedLocales: ChemSolutionLocalizations.supportedLocales,
-                // home: SplashPage.create(),
+                home: const MainPage(),
               );
             },
           ),

@@ -3,5 +3,9 @@
     "appName": "ChemSolution",
     "generalAppErrorMessage": "Сталася помилка з боку мобільного клієнту",
     "errorIntenetConnection": "Помилка підключення до Інтернету",
-    "serverErrorMessage": "Сталася серверна помилка"
+    "serverErrorMessage": "Сталася серверна помилка",
+    "elements": "Елементи",
+    "newsAnsFacts": "Новини та факти",
+    "cribs": "Шпаргалки",
+    "myProfile": "Мій профіль"
 }

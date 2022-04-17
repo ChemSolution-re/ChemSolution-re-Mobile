@@ -115,6 +115,30 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Сталася серверна помилка'**
   String get serverErrorMessage;
+
+  /// No description provided for @elements.
+  ///
+  /// In uk, this message translates to:
+  /// **'Елементи'**
+  String get elements;
+
+  /// No description provided for @newsAnsFacts.
+  ///
+  /// In uk, this message translates to:
+  /// **'Новини та факти'**
+  String get newsAnsFacts;
+
+  /// No description provided for @cribs.
+  ///
+  /// In uk, this message translates to:
+  /// **'Шпаргалки'**
+  String get cribs;
+
+  /// No description provided for @myProfile.
+  ///
+  /// In uk, this message translates to:
+  /// **'Мій профіль'**
+  String get myProfile;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

@@ -18,4 +18,16 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get serverErrorMessage => 'Сталася серверна помилка';
+
+  @override
+  String get elements => 'Елементи';
+
+  @override
+  String get newsAnsFacts => 'Новини та факти';
+
+  @override
+  String get cribs => 'Шпаргалки';
+
+  @override
+  String get myProfile => 'Мій профіль';
 }

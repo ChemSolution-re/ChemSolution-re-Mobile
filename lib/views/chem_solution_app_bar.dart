@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../l10n/chem_solution_localizations.dart';
-import '../resources/app_image_resources.dart';
+import '../resources/app_image_assets.dart';
 import '../themes/main_theme.dart';
 
 class ChemSolutionAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -57,6 +57,6 @@ class _ChemSolutionAppBarState extends State<ChemSolutionAppBar> {
         icon: const Icon(Icons.arrow_back_ios_new),
       );
     }
-    return Image.asset(AppImageResources.logo);
+    return Image.asset(AppImageAssets.logo);
   }
 }

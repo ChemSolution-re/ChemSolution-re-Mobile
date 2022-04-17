@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/app_control/app_control_cubit.dart';
 import 'di/locator.dart';
 import 'l10n/chem_solution_localizations.dart';
+import 'pages/splash_page/splash_page.dart';
 import 'themes/main_theme.dart';
 
 class ChemSolutionApp extends StatelessWidget {
@@ -50,7 +51,7 @@ class ChemSolutionApp extends StatelessWidget {
                 localizationsDelegates:
                     ChemSolutionLocalizations.localizationsDelegates,
                 supportedLocales: ChemSolutionLocalizations.supportedLocales,
-                home: const MainPage(),
+                home: const SplashPage(),
               );
             },
           ),

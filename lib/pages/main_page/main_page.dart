@@ -1,12 +1,19 @@
-import 'package:chem_solution/pages/main_page/tabs/main_page_tab_item.dart';
-import 'package:chem_solution/views/chem_solution_app_bar.dart';
 import 'package:flutter/material.dart';
+
+import '../../config/transition_route.dart';
+import 'tabs/main_page_tab_item.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
   @override
   State<MainPage> createState() => _MainPageState();
+
+  static PageRoute getRoute() {
+    return FadeTransitionRoute<MainPage>(
+      builder: (_, __, ___) => const MainPage(),
+    );
+  }
 }
 
 class _MainPageState extends State<MainPage> {

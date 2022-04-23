@@ -17,11 +17,7 @@ class HeaderApiInterceptor implements Interceptor {
 
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {
-    if (_shouldLogOut(err.response?.statusCode)) {
-      _logoutService.logout();
-    } else {
-      handler.next(err);
-    }
+    handler.next(err);
   }
 
   @override
@@ -53,14 +49,5 @@ class HeaderApiInterceptor implements Interceptor {
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) async {
     handler.next(response);
-  }
-
-  bool _shouldLogOut(int? statusCode) {
-    if (statusCode == null) return false;
-
-    // TODO: Add statuses to the list
-    const logOutStatuses = [];
-
-    return logOutStatuses.contains(statusCode);
   }
 }

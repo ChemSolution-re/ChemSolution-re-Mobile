@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../models/blog_post/blog_post.dart';
 import '../models/elements/chem_element.dart';
 import 'api_constants.dart';
 
@@ -19,4 +20,13 @@ abstract class ChemSolutionApiClient {
 
   @GET('/Elements')
   Future<List<ChemElement>> getAllElements();
+
+  ///
+  ///
+  ///
+
+  @GET('/BlogPosts/{blogPostCategory}')
+  Future<List<BlogPost>> getBlogPostsByCategory(
+    @Path('blogPostCategory') String category,
+  );
 }

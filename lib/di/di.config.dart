@@ -12,10 +12,11 @@ import '../api/chem_solution_api_client.dart' as _i7;
 import '../api/interceptors/header_api_interceptor.dart' as _i5;
 import '../bloc/app_control/app_control_cubit.dart' as _i4;
 import '../bloc/main_page/elements_tab/elements_tab_cubit.dart' as _i9;
+import '../services/blog_posts_service.dart' as _i10;
 import '../services/elements_service.dart' as _i8;
 import '../services/preferences_service.dart' as _i3;
 import 'modules/api_module.dart'
-    as _i10; // ignore_for_file: unnecessary_lambdas
+    as _i11; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -39,7 +40,9 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i8.ElementsService(get<_i7.ChemSolutionApiClient>()));
   gh.factory<_i9.ElementsTabCubit>(
       () => _i9.ElementsTabCubit(get<_i8.ElementsService>()));
+  gh.factory<_i10.BlogPostsService>(
+      () => _i10.BlogPostsService(get<_i7.ChemSolutionApiClient>()));
   return get;
 }
 
-class _$ApiModule extends _i10.ApiModule {}
+class _$ApiModule extends _i11.ApiModule {}

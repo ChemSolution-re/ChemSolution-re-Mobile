@@ -247,6 +247,12 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Детальніше...'**
   String get readMore;
+
+  /// No description provided for @auth.
+  ///
+  /// In uk, this message translates to:
+  /// **'Авторизація'**
+  String get auth;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

@@ -25,5 +25,6 @@
     "postTransitionMetals": "Постперехідні метали",
     "nobleGases": "Благородні гази",
     "nonMetals": "Неметали",
-    "readMore": "Детальніше..."
+    "readMore": "Детальніше...",
+    "auth": "Авторизація"
 }

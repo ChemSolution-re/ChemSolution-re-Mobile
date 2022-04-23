@@ -23,4 +23,13 @@ class _LightColorThemeData implements MainColorThemeData {
 
   @override
   Color get blogPostTileBackground => _AppColors.white;
+
+  @override
+  Color get primaryProfileButtonBackground => _AppColors.blue;
+
+  @override
+  Color get profileButtonIcon => _AppColors.darkBlue;
+
+  @override
+  Color get secondaryProfileButtonBackground => _AppColors.green;
 }

@@ -7,4 +7,9 @@ class _LightTextThemeData implements MainTextThemeData {
   TextStyle get appTitle => _headline1.copyWith(
         color: _AppColors.green,
       );
+
+  @override
+  TextStyle get profileButtonTitle => _headline1.copyWith(
+        fontWeight: FontWeight.w300,
+      );
 }

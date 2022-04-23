@@ -62,6 +62,7 @@ class _NewsAndFactsTabState extends State<NewsAndFactsTab> {
         return ErrorView(onPressed: cubit.loadPosts);
       case NewsAndFactsTabStatus.success:
         return ListView.builder(
+          physics: const BouncingScrollPhysics(),
           itemBuilder: (_, index) {
             return BlogPostTile(post: state.posts[index]);
           },

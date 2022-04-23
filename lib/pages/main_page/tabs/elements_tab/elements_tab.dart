@@ -62,6 +62,7 @@ class _ElementsTabState extends State<ElementsTab> {
         return ErrorView(onPressed: cubit.loadElements);
       case ElementTabStatus.success:
         return ListView.builder(
+          physics: const BouncingScrollPhysics(),
           itemBuilder: (_, index) {
             return ElementTile(element: state.elements[index]);
           },

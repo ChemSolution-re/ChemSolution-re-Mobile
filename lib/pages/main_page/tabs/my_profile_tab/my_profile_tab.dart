@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../views/chem_solution_app_bar.dart';
+import 'views/unauthorized_view.dart';
 
 class MyProfileTab extends StatefulWidget {
   static Widget create() {
@@ -19,9 +20,8 @@ class _MyProfileTabState extends State<MyProfileTab> {
     return const Scaffold(
       appBar: ChemSolutionAppBar(
         isLeadingIconEnabled: false,
-        // isSearching: isSearching,
-        // onSearchIconPressed: _onSearchIconPress,
       ),
+      body: UnautorizedView(),
     );
   }
 }

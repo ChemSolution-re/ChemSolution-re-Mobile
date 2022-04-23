@@ -84,4 +84,7 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get readMore => 'Детальніше...';
+
+  @override
+  String get auth => 'Авторизація';
 }

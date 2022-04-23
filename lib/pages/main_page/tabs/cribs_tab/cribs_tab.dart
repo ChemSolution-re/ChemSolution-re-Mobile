@@ -62,6 +62,7 @@ class _CribsTabState extends State<CribsTab> {
         return ErrorView(onPressed: cubit.loadPosts);
       case CribsTabStatus.success:
         return ListView.builder(
+          physics: const BouncingScrollPhysics(),
           itemBuilder: (_, index) {
             return BlogPostTile(post: state.posts[index]);
           },

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../bloc/main_page/elements_tab/elements_tab_cubit.dart';
 import '../../../../di/locator.dart';
 import '../../../../utils/chem_solution_toasts.dart';
+import '../../../../views/animated_logo.dart';
 import '../../../../views/chem_solution_app_bar.dart';
 
 class ElementsTab extends StatefulWidget {
@@ -37,14 +38,29 @@ class _ElementsTabState extends State<ElementsTab> {
     return BlocConsumer<ElementsTabCubit, ElementsTabState>(
       listener: _onStateChanged,
       builder: (context, state) {
-        return const Scaffold(
+        return Scaffold(
           appBar: ChemSolutionAppBar(
             isLeadingIconEnabled: false,
-            // isSearching: isSearching,
-            // onSearchIconPressed: _onSearchIconPress,
+            isSearching: state.isSearching,
+            onSearchIconPressed: () {},
           ),
+          body: _buildBody(state),
         );
       },
     );
+  }
+
+  Widget _buildBody(ElementsTabState state) {
+    switch (state.status) {
+      case ElementTabStatus.loading:
+        return const Center(child: AnimatedLogo());
+      case ElementTabStatus.error:
+        return IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.replay_outlined),
+        );
+      case ElementTabStatus.success:
+        return const Center();
+    }
   }
 }

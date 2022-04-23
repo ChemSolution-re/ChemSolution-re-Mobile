@@ -12,7 +12,7 @@ class ElementsService extends BaseService {
 
   Future<List<ChemElement>> getAllElements() async {
     return makeErrorParsedCall(() async {
-      return _apiClient.getAllElements();
+      return await _apiClient.getAllElements();
     });
   }
 }

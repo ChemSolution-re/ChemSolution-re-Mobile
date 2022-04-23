@@ -29,10 +29,10 @@ class ChemElement extends Equatable {
   final String imgAtom;
   final int price;
   final int group;
-  @JsonKey(name: 'elementCategory')
-  final ElementCategory category;
-  @JsonKey(name: 'elementValences')
-  final List<ElementValence> valences;
+  // @JsonKey(name: 'elementCategory')
+  // final ElementCategory category;
+  // @JsonKey(name: 'elementValences')
+  // final List<ElementValence> valences;
 
   const ChemElement({
     required this.elementId,
@@ -51,8 +51,8 @@ class ChemElement extends Equatable {
     required this.imgAtom,
     required this.price,
     required this.group,
-    required this.category,
-    required this.valences,
+    // required this.category,
+    // required this.valences,
   });
 
   factory ChemElement.fromJson(Map<String, dynamic> json) {
@@ -80,8 +80,8 @@ class ChemElement extends Equatable {
       imgAtom,
       price,
       group,
-      category,
-      valences,
+      // category,
+      // valences,
     ];
   }
 }

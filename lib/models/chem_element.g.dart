@@ -23,10 +23,6 @@ ChemElement _$ChemElementFromJson(Map<String, dynamic> json) => ChemElement(
       imgAtom: json['imgAtom'] as String? ?? '',
       price: json['price'] as int,
       group: json['group'] as int,
-      category: $enumDecode(_$ElementCategoryEnumMap, json['elementCategory']),
-      valences: (json['elementValences'] as List<dynamic>)
-          .map((e) => ElementValence.fromJson(e as Map<String, dynamic>))
-          .toList(),
     );
 
 Map<String, dynamic> _$ChemElementToJson(ChemElement instance) =>
@@ -47,18 +43,4 @@ Map<String, dynamic> _$ChemElementToJson(ChemElement instance) =>
       'imgAtom': instance.imgAtom,
       'price': instance.price,
       'group': instance.group,
-      'elementCategory': _$ElementCategoryEnumMap[instance.category],
-      'elementValences': instance.valences,
     };
-
-const _$ElementCategoryEnumMap = {
-  ElementCategory.alkaliMetals: 'AlkaliMetals',
-  ElementCategory.alkalineEarthMetals: 'AlkalineEarthMetals',
-  ElementCategory.transitionMetals: 'TransitionMetals',
-  ElementCategory.lanthanides: 'Lanthanides',
-  ElementCategory.actinoids: 'Actinoids',
-  ElementCategory.semiMetals: 'Semi_metals',
-  ElementCategory.postTransitionMetals: 'Post_transitionMetals',
-  ElementCategory.nobleGases: 'NobleGases',
-  ElementCategory.nonMetals: 'Non_metals',
-};

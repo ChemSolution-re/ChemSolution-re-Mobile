@@ -9,7 +9,7 @@ abstract class ApiModule {
   @lazySingleton
   Dio dio(HeaderApiInterceptor generalInterceptor) {
     return Dio()
-      ..options.sendTimeout = 10000
+      ..options.sendTimeout = 100
       ..interceptors.add(LogInterceptor(requestBody: true, responseBody: true))
       ..interceptors.add(generalInterceptor);
   }

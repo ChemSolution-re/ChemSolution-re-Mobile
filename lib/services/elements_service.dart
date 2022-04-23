@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 
 import '../api/chem_solution_api_client.dart';
-import '../models/chem_element.dart';
+import '../models/elements/chem_element.dart';
 import 'base_service.dart';
 
 @injectable

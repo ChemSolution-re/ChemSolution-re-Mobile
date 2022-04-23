@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../l10n/chem_solution_localizations.dart';
+import '../../l10n/chem_solution_localizations.dart';
 
 enum ElementCategory {
   @JsonValue('AlkaliMetals')

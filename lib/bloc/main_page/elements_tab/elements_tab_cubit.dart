@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../models/chem_element.dart';
+import '../../../models/elements/chem_element.dart';
 import '../../../models/handled_error.dart';
 import '../../../services/elements_service.dart';
 import '../../base_cubit.dart';

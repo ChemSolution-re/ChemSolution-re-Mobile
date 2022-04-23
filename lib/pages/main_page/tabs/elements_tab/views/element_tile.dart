@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../l10n/chem_solution_localizations.dart';
-import '../../../../../models/chem_element.dart';
-import '../../../../../models/element_category.dart';
+import '../../../../../models/elements/chem_element.dart';
+import '../../../../../models/elements/element_category.dart';
 import '../../../../../themes/main_theme.dart';
 
 class ElementTile extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../models/chem_element.dart';
+import '../models/elements/chem_element.dart';
 import 'api_constants.dart';
 
 part 'chem_solution_api_client.g.dart';

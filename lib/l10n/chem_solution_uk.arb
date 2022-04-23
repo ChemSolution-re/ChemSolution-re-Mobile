@@ -9,5 +9,20 @@
     "cribs": "Шпаргалки",
     "myProfile": "Мій профіль",
     "error": "Відбулася помилка",
-    "retry": "Повторити"
+    "retry": "Повторити",
+    "elementId": "Порядковий номер",
+    "symbol": "Позначення",
+    "name": "Назва",
+    "category": "Категорія",
+    "atomWeight": "Атомна маса",
+    "valency": "Валентність",
+    "alkaliMetals": "Лужні метали",
+    "alkalineEarthMetals": "Лужно-земельні метали",
+    "transitionMetals": "Перехідні метали",
+    "lanthanides": "Лантаноїди",
+    "actinoids": "Актиноїди",
+    "semiMetals": "Напівметали",
+    "postTransitionMetals": "Постперехідні метали",
+    "nobleGases": "Благородні гази",
+    "nonMetals": "Неметали"
 }

@@ -6,4 +6,5 @@ abstract class MainColorThemeData {
   Color get errorToastBackground;
   Color get successToastForeground;
   Color get successToastBackground;
+  Color get elementTileBackground;
 }

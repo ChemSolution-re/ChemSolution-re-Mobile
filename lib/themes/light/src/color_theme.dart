@@ -17,4 +17,7 @@ class _LightColorThemeData implements MainColorThemeData {
 
   @override
   Color get successToastForeground => _AppColors.darkGreen;
+
+  @override
+  Color get elementTileBackground => _AppColors.blue;
 }

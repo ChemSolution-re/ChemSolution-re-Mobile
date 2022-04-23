@@ -151,6 +151,96 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Повторити'**
   String get retry;
+
+  /// No description provided for @elementId.
+  ///
+  /// In uk, this message translates to:
+  /// **'Порядковий номер'**
+  String get elementId;
+
+  /// No description provided for @symbol.
+  ///
+  /// In uk, this message translates to:
+  /// **'Позначення'**
+  String get symbol;
+
+  /// No description provided for @name.
+  ///
+  /// In uk, this message translates to:
+  /// **'Назва'**
+  String get name;
+
+  /// No description provided for @category.
+  ///
+  /// In uk, this message translates to:
+  /// **'Категорія'**
+  String get category;
+
+  /// No description provided for @atomWeight.
+  ///
+  /// In uk, this message translates to:
+  /// **'Атомна маса'**
+  String get atomWeight;
+
+  /// No description provided for @valency.
+  ///
+  /// In uk, this message translates to:
+  /// **'Валентність'**
+  String get valency;
+
+  /// No description provided for @alkaliMetals.
+  ///
+  /// In uk, this message translates to:
+  /// **'Лужні метали'**
+  String get alkaliMetals;
+
+  /// No description provided for @alkalineEarthMetals.
+  ///
+  /// In uk, this message translates to:
+  /// **'Лужно-земельні метали'**
+  String get alkalineEarthMetals;
+
+  /// No description provided for @transitionMetals.
+  ///
+  /// In uk, this message translates to:
+  /// **'Перехідні метали'**
+  String get transitionMetals;
+
+  /// No description provided for @lanthanides.
+  ///
+  /// In uk, this message translates to:
+  /// **'Лантаноїди'**
+  String get lanthanides;
+
+  /// No description provided for @actinoids.
+  ///
+  /// In uk, this message translates to:
+  /// **'Актиноїди'**
+  String get actinoids;
+
+  /// No description provided for @semiMetals.
+  ///
+  /// In uk, this message translates to:
+  /// **'Напівметали'**
+  String get semiMetals;
+
+  /// No description provided for @postTransitionMetals.
+  ///
+  /// In uk, this message translates to:
+  /// **'Постперехідні метали'**
+  String get postTransitionMetals;
+
+  /// No description provided for @nobleGases.
+  ///
+  /// In uk, this message translates to:
+  /// **'Благородні гази'**
+  String get nobleGases;
+
+  /// No description provided for @nonMetals.
+  ///
+  /// In uk, this message translates to:
+  /// **'Неметали'**
+  String get nonMetals;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

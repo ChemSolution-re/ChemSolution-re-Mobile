@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'element_category.dart';
 import 'element_valence.dart';
+import 'valence.dart';
 
 part 'chem_element.g.dart';
 
@@ -54,6 +55,14 @@ class ChemElement extends Equatable {
     required this.category,
     required this.valences,
   });
+
+  String get valenceLabel {
+    String label = '';
+    for (final valence in valences) {
+      label += '${valence.valence.number} ';
+    }
+    return label;
+  }
 
   factory ChemElement.fromJson(Map<String, dynamic> json) {
     return _$ChemElementFromJson(json);

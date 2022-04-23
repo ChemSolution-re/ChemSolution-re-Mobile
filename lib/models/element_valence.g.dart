@@ -24,4 +24,5 @@ const _$ValenceEnumMap = {
   Valence.five: 'Five',
   Valence.six: 'Six',
   Valence.seven: 'Seven',
+  Valence.eight: 'Eight',
 };

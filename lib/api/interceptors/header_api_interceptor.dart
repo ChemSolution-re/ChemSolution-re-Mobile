@@ -1,18 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../services/auth/logout_service.dart';
 import '../../services/preferences_service.dart';
-import '../api_constants.dart';
 
 @injectable
 class HeaderApiInterceptor implements Interceptor {
   final PreferencesService _preferencesService;
-  final LogoutService _logoutService;
 
   HeaderApiInterceptor(
     this._preferencesService,
-    this._logoutService,
   );
 
   @override
@@ -33,15 +29,6 @@ class HeaderApiInterceptor implements Interceptor {
     if (_preferencesService.isLoggedIn) {
       options.headers['Authorization'] = 'Bearer $accessToken';
     }
-
-    // final isInWhiteList = ApiConstants.endPointWhiteList
-    //         .indexWhere((endPoint) => options.uri.path.contains(endPoint)) !=
-    //     -1;
-
-    // if (accessToken.isEmpty && !isInWhiteList) {
-    //   _logoutService.logout();
-    //   return;
-    // }
 
     handler.next(options);
   }

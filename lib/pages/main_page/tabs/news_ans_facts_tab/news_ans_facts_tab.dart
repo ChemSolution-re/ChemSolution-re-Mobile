@@ -5,6 +5,7 @@ import '../../../../bloc/main_page/news_and_facts_tab/news_and_facts_tab_cubit.d
 import '../../../../di/locator.dart';
 import '../../../../utils/chem_solution_toasts.dart';
 import '../../../../views/animated_logo.dart';
+import '../../../../views/blog_post_tile.dart';
 import '../../../../views/chem_solution_app_bar.dart';
 import '../../../../views/error_view.dart';
 
@@ -60,11 +61,10 @@ class _NewsAndFactsTabState extends State<NewsAndFactsTab> {
       case NewsAndFactsTabStatus.error:
         return ErrorView(onPressed: cubit.loadPosts);
       case NewsAndFactsTabStatus.success:
-        return ListView.separated(
+        return ListView.builder(
           itemBuilder: (_, index) {
-            return const SizedBox();
+            return BlogPostTile(post: state.posts[index]);
           },
-          separatorBuilder: (_, __) => const SizedBox(height: 16),
           itemCount: state.posts.length,
         );
     }

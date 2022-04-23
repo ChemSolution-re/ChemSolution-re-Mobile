@@ -241,6 +241,12 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Неметали'**
   String get nonMetals;
+
+  /// No description provided for @readMore.
+  ///
+  /// In uk, this message translates to:
+  /// **'Детальніше...'**
+  String get readMore;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

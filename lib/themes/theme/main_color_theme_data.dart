@@ -7,4 +7,5 @@ abstract class MainColorThemeData {
   Color get successToastForeground;
   Color get successToastBackground;
   Color get elementTileBackground;
+  Color get blogPostTileBackground;
 }

@@ -81,4 +81,7 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get nonMetals => 'Неметали';
+
+  @override
+  String get readMore => 'Детальніше...';
 }

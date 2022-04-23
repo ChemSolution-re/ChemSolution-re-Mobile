@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+
+import '../l10n/chem_solution_localizations.dart';
+import '../models/blog_post/blog_post.dart';
+import '../themes/main_theme.dart';
+
+class BlogPostTile extends StatelessWidget {
+  final BlogPost post;
+
+  const BlogPostTile({
+    Key? key,
+    required this.post,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: MainTheme.color(context).blogPostTileBackground,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.network(
+              post.image,
+              height: 240,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                post.title,
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              TextButton(
+                onPressed: post.isLocked ? null : () {},
+                child: Text(
+                  ChemSolutionLocalizations.of(context).readMore,
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}

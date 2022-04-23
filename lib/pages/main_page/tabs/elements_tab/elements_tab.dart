@@ -61,11 +61,10 @@ class _ElementsTabState extends State<ElementsTab> {
       case ElementTabStatus.error:
         return ErrorView(onPressed: cubit.loadElements);
       case ElementTabStatus.success:
-        return ListView.separated(
+        return ListView.builder(
           itemBuilder: (_, index) {
             return ElementTile(element: state.elements[index]);
           },
-          separatorBuilder: (_, __) => const SizedBox(height: 16),
           itemCount: state.elements.length,
         );
     }

@@ -20,4 +20,7 @@ class _LightColorThemeData implements MainColorThemeData {
 
   @override
   Color get elementTileBackground => _AppColors.blue;
+
+  @override
+  Color get blogPostTileBackground => _AppColors.white;
 }

@@ -44,8 +44,8 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i9.ElementsTabCubit(get<_i8.ElementsService>()));
   gh.factory<_i10.BlogPostsService>(
       () => _i10.BlogPostsService(get<_i7.ChemSolutionApiClient>()));
-  gh.factory<_i11.NewsAndFactsCubit>(
-      () => _i11.NewsAndFactsCubit(get<_i10.BlogPostsService>()));
+  gh.factory<_i11.NewsAndFactsTabCubit>(
+      () => _i11.NewsAndFactsTabCubit(get<_i10.BlogPostsService>()));
   return get;
 }
 

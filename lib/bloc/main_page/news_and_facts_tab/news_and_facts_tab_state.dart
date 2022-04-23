@@ -1,31 +1,31 @@
 part of 'news_and_facts_tab_cubit.dart';
 
-enum NewsAndFactsStatus {
+enum NewsAndFactsTabStatus {
   loading,
   error,
   success,
 }
 
-class NewsAndFactsState extends Equatable {
-  final NewsAndFactsStatus status;
+class NewsAndFactsTabState extends Equatable {
+  final NewsAndFactsTabStatus status;
   final List<BlogPost> posts;
   final HandledError error;
   final bool isSearching;
 
-  const NewsAndFactsState({
-    this.status = NewsAndFactsStatus.loading,
+  const NewsAndFactsTabState({
+    this.status = NewsAndFactsTabStatus.loading,
     this.posts = const [],
     this.error = const HandledError.empty(),
     this.isSearching = false,
   });
 
-  NewsAndFactsState copyWith({
-    NewsAndFactsStatus? status,
+  NewsAndFactsTabState copyWith({
+    NewsAndFactsTabStatus? status,
     List<BlogPost>? posts,
     HandledError? error,
     bool? isSearching,
   }) {
-    return NewsAndFactsState(
+    return NewsAndFactsTabState(
       status: status ?? this.status,
       posts: posts ?? this.posts,
       error: error ?? this.error,

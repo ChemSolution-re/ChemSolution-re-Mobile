@@ -46,7 +46,7 @@ class _ElementsTabState extends State<ElementsTab> {
           appBar: ChemSolutionAppBar(
             isLeadingIconEnabled: false,
             isSearching: state.isSearching,
-            onSearchIconPressed: () {},
+            onSearchIconPressed: cubit.changeSearching,
           ),
           body: _buildBody(state),
         );

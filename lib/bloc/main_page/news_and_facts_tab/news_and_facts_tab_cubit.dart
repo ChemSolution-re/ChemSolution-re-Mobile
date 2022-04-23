@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
@@ -12,30 +10,36 @@ import '../../base_cubit.dart';
 part 'news_and_facts_tab_state.dart';
 
 @injectable
-class NewsAndFactsCubit extends BaseCubit<NewsAndFactsState> {
+class NewsAndFactsTabCubit extends BaseCubit<NewsAndFactsTabState> {
   final BlogPostsService _blogPostsService;
 
-  NewsAndFactsCubit(
+  NewsAndFactsTabCubit(
     this._blogPostsService,
-  ) : super(const NewsAndFactsState());
+  ) : super(const NewsAndFactsTabState());
 
   @override
   void handleError(HandledError error) {
     emit(state.copyWith(
       error: error,
-      status: NewsAndFactsStatus.error,
+      status: NewsAndFactsTabStatus.error,
+    ));
+  }
+
+  void changeSearching() {
+    emit(state.copyWith(
+      isSearching: !state.isSearching,
     ));
   }
 
   Future<void> loadPosts() async {
-    emit(state.copyWith(status: NewsAndFactsStatus.loading));
+    emit(state.copyWith(status: NewsAndFactsTabStatus.loading));
     await makeErrorHandledCall(() async {
       final posts = await _blogPostsService.getBlogPostsByCategory(
         BlogPostCategory.news,
       );
       emit(state.copyWith(
         posts: posts,
-        status: NewsAndFactsStatus.success,
+        status: NewsAndFactsTabStatus.success,
       ));
     });
   }

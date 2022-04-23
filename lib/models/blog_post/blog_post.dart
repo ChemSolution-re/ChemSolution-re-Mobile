@@ -27,6 +27,12 @@ class BlogPost extends Equatable {
     required this.isLocked,
   });
 
+  factory BlogPost.fromJson(Map<String, dynamic> json) {
+    return _$BlogPostFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() => _$BlogPostToJson(this);
+
   @override
   List<Object> get props {
     return [

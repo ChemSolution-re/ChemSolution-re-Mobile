@@ -26,6 +26,12 @@ class ElementsTabCubit extends BaseCubit<ElementsTabState> {
     ));
   }
 
+  void changeSearching() {
+    emit(state.copyWith(
+      isSearching: !state.isSearching,
+    ));
+  }
+
   Future<void> loadElements() async {
     emit(state.copyWith(status: ElementTabStatus.loading));
 

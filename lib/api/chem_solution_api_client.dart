@@ -22,10 +22,10 @@ abstract class ChemSolutionApiClient {
   Future<List<ChemElement>> getAllElements();
 
   ///
-  ///
+  /// BlocPosts
   ///
 
-  @GET('/BlogPosts/{blogPostCategory}')
+  @GET('/BlogPosts/all/{blogPostCategory}')
   Future<List<BlogPost>> getBlogPostsByCategory(
     @Path('blogPostCategory') String category,
   );

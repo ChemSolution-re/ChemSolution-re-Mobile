@@ -15,7 +15,9 @@ class NewsAndFactsTabCubit extends BaseCubit<NewsAndFactsTabState> {
 
   NewsAndFactsTabCubit(
     this._blogPostsService,
-  ) : super(const NewsAndFactsTabState());
+  ) : super(const NewsAndFactsTabState()) {
+    loadPosts();
+  }
 
   @override
   void handleError(HandledError error) {

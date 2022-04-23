@@ -4,7 +4,7 @@ import '../../../../views/chem_solution_app_bar.dart';
 
 class CribsTab extends StatefulWidget {
   static Widget create() {
-    return CribsTab._();
+    return const CribsTab._();
   }
 
   const CribsTab._({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class CribsTab extends StatefulWidget {
 class _CribsTabState extends State<CribsTab> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: ChemSolutionAppBar(
         isLeadingIconEnabled: false,
         // isSearching: isSearching,

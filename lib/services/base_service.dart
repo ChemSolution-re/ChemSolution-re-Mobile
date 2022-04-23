@@ -1,14 +1,14 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:chem_solution/l10n/chem_solution_localizations.dart';
-import 'package:chem_solution/services/preferences_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 import '../../di/locator.dart';
 import '../../exceptions/api_exception.dart';
 import '../../exceptions/application_exception.dart';
+import '../l10n/chem_solution_localizations.dart';
+import 'preferences_service.dart';
 
 abstract class BaseService {
   @protected

@@ -1,4 +1,3 @@
-import 'package:chem_solution/services/preferences_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -6,6 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'chem_solution_app.dart';
 import 'di/di.dart';
 import 'di/locator.dart';
+import 'services/preferences_service.dart';
 
 void main() async {
   await Hive.initFlutter();

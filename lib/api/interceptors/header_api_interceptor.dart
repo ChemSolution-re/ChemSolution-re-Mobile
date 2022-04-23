@@ -26,7 +26,9 @@ class HeaderApiInterceptor implements Interceptor {
 
   @override
   void onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) async {
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     final languageCode = _preferencesService.getLocale().languageCode;
     final accessToken = _preferencesService.getAccessToken();
 

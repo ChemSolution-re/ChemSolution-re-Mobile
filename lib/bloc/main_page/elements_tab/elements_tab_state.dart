@@ -6,26 +6,26 @@ enum ElementTabStatus {
   success,
 }
 
-class ElementTabState extends Equatable {
+class ElementsTabState extends Equatable {
   final ElementTabStatus status;
   final List<ChemElement> elements;
   final HandledError error;
   final bool isSearching;
 
-  const ElementTabState({
+  const ElementsTabState({
     this.status = ElementTabStatus.loading,
     this.elements = const [],
     this.error = const HandledError.empty(),
     this.isSearching = false,
   });
 
-  ElementTabState copyWith({
+  ElementsTabState copyWith({
     ElementTabStatus? status,
     List<ChemElement>? elements,
     HandledError? error,
     bool? isSearching,
   }) {
-    return ElementTabState(
+    return ElementsTabState(
       status: status ?? this.status,
       elements: elements ?? this.elements,
       error: error ?? this.error,

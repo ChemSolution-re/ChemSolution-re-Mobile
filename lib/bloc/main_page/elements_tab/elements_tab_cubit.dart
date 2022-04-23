@@ -9,12 +9,12 @@ import '../../base_cubit.dart';
 part 'elements_tab_state.dart';
 
 @injectable
-class ElementsTabCubit extends BaseCubit<ElementTabState> {
+class ElementsTabCubit extends BaseCubit<ElementsTabState> {
   final ElementsService _elementsService;
 
   ElementsTabCubit(
     this._elementsService,
-  ) : super(const ElementTabState()) {
+  ) : super(const ElementsTabState()) {
     loadElements();
   }
 

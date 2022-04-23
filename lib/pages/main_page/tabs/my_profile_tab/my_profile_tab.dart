@@ -4,7 +4,7 @@ import '../../../../views/chem_solution_app_bar.dart';
 
 class MyProfileTab extends StatefulWidget {
   static Widget create() {
-    return MyProfileTab._();
+    return const MyProfileTab._();
   }
 
   const MyProfileTab._({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class MyProfileTab extends StatefulWidget {
 class _MyProfileTabState extends State<MyProfileTab> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: ChemSolutionAppBar(
         isLeadingIconEnabled: false,
         // isSearching: isSearching,

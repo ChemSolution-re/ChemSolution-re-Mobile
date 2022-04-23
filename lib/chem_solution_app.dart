@@ -1,6 +1,3 @@
-import 'package:chem_solution/pages/main_page/main_page.dart';
-import 'package:chem_solution/themes/light/light_theme.dart';
-import 'package:chem_solution/utils/chem_solution_toasts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,7 +5,9 @@ import 'bloc/app_control/app_control_cubit.dart';
 import 'di/locator.dart';
 import 'l10n/chem_solution_localizations.dart';
 import 'pages/splash_page/splash_page.dart';
+import 'themes/light/light_theme.dart';
 import 'themes/main_theme.dart';
+import 'utils/chem_solution_toasts.dart';
 
 class ChemSolutionApp extends StatelessWidget {
   static Widget create(Locale locale, bool isLoggedIn) {

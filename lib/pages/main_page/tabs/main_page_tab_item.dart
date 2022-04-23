@@ -1,10 +1,11 @@
-import 'package:chem_solution/l10n/chem_solution_localizations.dart';
-import 'package:chem_solution/pages/main_page/tabs/cribs_tab/cribs_tab.dart';
-import 'package:chem_solution/pages/main_page/tabs/elements_tab/elements_tab.dart';
-import 'package:chem_solution/pages/main_page/tabs/my_profile_tab/my_profile_tab.dart';
-import 'package:chem_solution/pages/main_page/tabs/news_ans_facts_tab/news_ans_facts_tab.dart';
-import 'package:flutter/material.dart';
 import 'package:community_material_icon/community_material_icon.dart';
+import 'package:flutter/material.dart';
+
+import '../../../l10n/chem_solution_localizations.dart';
+import 'cribs_tab/cribs_tab.dart';
+import 'elements_tab/elements_tab.dart';
+import 'my_profile_tab/my_profile_tab.dart';
+import 'news_ans_facts_tab/news_ans_facts_tab.dart';
 
 enum MainPageTabItem {
   elements,

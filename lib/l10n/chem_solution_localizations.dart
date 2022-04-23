@@ -139,6 +139,18 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Мій профіль'**
   String get myProfile;
+
+  /// No description provided for @error.
+  ///
+  /// In uk, this message translates to:
+  /// **'Відбулася помилка'**
+  String get error;
+
+  /// No description provided for @retry.
+  ///
+  /// In uk, this message translates to:
+  /// **'Повторити'**
+  String get retry;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

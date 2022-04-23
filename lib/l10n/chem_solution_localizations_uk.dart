@@ -30,4 +30,10 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get myProfile => 'Мій профіль';
+
+  @override
+  String get error => 'Відбулася помилка';
+
+  @override
+  String get retry => 'Повторити';
 }

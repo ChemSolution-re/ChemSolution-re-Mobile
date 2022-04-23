@@ -34,14 +34,14 @@ class HeaderApiInterceptor implements Interceptor {
       options.headers['Authorization'] = 'Bearer $accessToken';
     }
 
-    final isInWhiteList = ApiConstants.endPointWhiteList
-            .indexWhere((endPoint) => options.uri.path.contains(endPoint)) !=
-        -1;
+    // final isInWhiteList = ApiConstants.endPointWhiteList
+    //         .indexWhere((endPoint) => options.uri.path.contains(endPoint)) !=
+    //     -1;
 
-    if (accessToken.isEmpty && !isInWhiteList) {
-      _logoutService.logout();
-      return;
-    }
+    // if (accessToken.isEmpty && !isInWhiteList) {
+    //   _logoutService.logout();
+    //   return;
+    // }
 
     handler.next(options);
   }

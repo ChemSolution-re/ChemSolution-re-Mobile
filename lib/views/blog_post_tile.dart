@@ -24,33 +24,41 @@ class BlogPostTile extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.network(
-              post.image,
-              height: 240,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
-          ),
+          _buildImage(),
           const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                post.title,
-                style: Theme.of(context).textTheme.headline2,
-              ),
-              TextButton(
-                onPressed: post.isLocked ? null : () {},
-                child: Text(
-                  ChemSolutionLocalizations.of(context).readMore,
-                ),
-              )
-            ],
-          )
+          _buildTitleRow(context)
         ],
       ),
+    );
+  }
+
+  Widget _buildImage() {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: Image.network(
+        post.image,
+        height: 240,
+        width: double.infinity,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+
+  Widget _buildTitleRow(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          post.title,
+          style: Theme.of(context).textTheme.headline2,
+        ),
+        TextButton(
+          onPressed: post.isLocked ? null : () {},
+          child: Text(
+            ChemSolutionLocalizations.of(context).readMore,
+          ),
+        )
+      ],
     );
   }
 }

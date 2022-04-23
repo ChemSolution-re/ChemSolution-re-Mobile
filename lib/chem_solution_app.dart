@@ -28,9 +28,9 @@ class ChemSolutionApp extends StatelessWidget {
     BuildContext context,
     AppControlState state,
   ) {
-    if (state.errorMessage.isNotEmpty) {
+    if (state.error.errorMessage.isNotEmpty) {
       ChemSolutionToasts.of(context).showError(
-        message: state.errorMessage,
+        message: state.error.errorMessage,
       );
     }
   }

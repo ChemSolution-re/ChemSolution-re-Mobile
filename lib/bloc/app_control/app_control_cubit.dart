@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../models/handled_error.dart';
 import '../../services/preferences_service.dart';
 import '../base_cubit.dart';
 
@@ -17,8 +18,8 @@ class AppControlCubit extends BaseCubit<AppControlState> {
   ) : super(initialState!);
 
   @override
-  void handleError(String errorMessage) {
-    emit(state.copyWith(errorMessage: errorMessage));
+  void handleError(HandledError error) {
+    emit(state.copyWith(error: error));
   }
 
   Future<void> setLocale(Locale locale) async {

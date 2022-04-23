@@ -4,23 +4,23 @@ part of 'app_control_cubit.dart';
 class AppControlState extends Equatable {
   final Locale locale;
   final bool isLoggedIn;
-  final String errorMessage;
+  final HandledError error;
 
   const AppControlState({
     required this.locale,
     required this.isLoggedIn,
-    this.errorMessage = '',
+    this.error = const HandledError.empty(),
   });
 
   AppControlState copyWith({
     Locale? locale,
     bool? isLoggedIn,
-    String? errorMessage,
+    HandledError? error,
   }) {
     return AppControlState(
       locale: locale ?? this.locale,
       isLoggedIn: isLoggedIn ?? this.isLoggedIn,
-      errorMessage: errorMessage ?? this.errorMessage,
+      error: error ?? this.error,
     );
   }
 
@@ -29,7 +29,7 @@ class AppControlState extends Equatable {
     return [
       locale,
       isLoggedIn,
-      errorMessage,
+      error,
     ];
   }
 }

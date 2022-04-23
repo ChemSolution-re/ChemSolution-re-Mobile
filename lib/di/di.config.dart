@@ -12,8 +12,10 @@ import '../api/chem_solution_api_client.dart' as _i8;
 import '../api/interceptors/header_api_interceptor.dart' as _i6;
 import '../bloc/app_control/app_control_cubit.dart' as _i5;
 import '../services/auth/logout_service.dart' as _i3;
+import '../services/elements_service.dart' as _i9;
 import '../services/preferences_service.dart' as _i4;
-import 'modules/api_module.dart' as _i9; // ignore_for_file: unnecessary_lambdas
+import 'modules/api_module.dart'
+    as _i10; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -34,7 +36,9 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => apiModule.dio(get<_i6.HeaderApiInterceptor>()));
   gh.lazySingleton<_i8.ChemSolutionApiClient>(
       () => apiModule.apiClient(get<_i7.Dio>()));
+  gh.factory<_i9.ElementsService>(
+      () => _i9.ElementsService(get<_i8.ChemSolutionApiClient>()));
   return get;
 }
 
-class _$ApiModule extends _i9.ApiModule {}
+class _$ApiModule extends _i10.ApiModule {}

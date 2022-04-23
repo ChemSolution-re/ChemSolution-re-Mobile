@@ -11,6 +11,12 @@ class ElementValence extends Equatable {
 
   const ElementValence(this.valence);
 
+  factory ElementValence.fromJson(Map<String, dynamic> json) {
+    return _$ElementValenceFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() => _$ElementValenceToJson(this);
+
   @override
   List<Object> get props => [valence];
 }

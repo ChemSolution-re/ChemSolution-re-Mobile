@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../models/element.dart';
+import '../models/chem_element.dart';
 import 'api_constants.dart';
 
 part 'chem_solution_api_client.g.dart';
@@ -18,5 +18,5 @@ abstract class ChemSolutionApiClient {
   ///
 
   @GET('/Elements')
-  Future<List<Element>> getAllElements();
+  Future<List<ChemElement>> getAllElements();
 }

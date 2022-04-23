@@ -38,9 +38,7 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: MainTheme.color(context).primaryBackground,
       body: const Center(
-        child: AnimatedLogo(
-          height: 200,
-        ),
+        child: AnimatedLogo(),
       ),
     );
   }

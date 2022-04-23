@@ -16,19 +16,19 @@ class _ChemSolutionApiClient implements ChemSolutionApiClient {
   String? baseUrl;
 
   @override
-  Future<List<Element>> getAllElements() async {
+  Future<List<ChemElement>> getAllElements() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<Element>>(
+        _setStreamType<List<ChemElement>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/Elements',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     var value = _result.data!
-        .map((dynamic i) => Element.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => ChemElement.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }

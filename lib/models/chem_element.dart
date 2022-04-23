@@ -4,10 +4,10 @@ import 'package:json_annotation/json_annotation.dart';
 import 'element_category.dart';
 import 'element_valence.dart';
 
-part 'element.g.dart';
+part 'chem_element.g.dart';
 
 @JsonSerializable()
-class Element extends Equatable {
+class ChemElement extends Equatable {
   final int elementId;
   @JsonKey(defaultValue: '')
   final String symbol;
@@ -33,17 +33,18 @@ class Element extends Equatable {
   final ElementCategory category;
   @JsonKey(name: 'elementValences')
   final List<ElementValence> valences;
-  Element({
+
+  const ChemElement({
     required this.elementId,
     required this.symbol,
     required this.name,
     required this.atomicWeight,
     required this.neutronQuantity,
     required this.atomicRadius,
-    this.electronegativity,
+    required this.electronegativity,
     required this.energyLevels,
-    this.meltingTemperature,
-    this.boilingTemperature,
+    required this.meltingTemperature,
+    required this.boilingTemperature,
     required this.isLocked,
     required this.info,
     required this.imgSymbol,
@@ -53,6 +54,12 @@ class Element extends Equatable {
     required this.category,
     required this.valences,
   });
+
+  factory ChemElement.fromJson(Map<String, dynamic> json) {
+    return _$ChemElementFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() => _$ChemElementToJson(this);
 
   @override
   List<Object?> get props {

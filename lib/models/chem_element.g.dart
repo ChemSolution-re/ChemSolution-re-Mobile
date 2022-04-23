@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'element.dart';
+part of 'chem_element.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Element _$ElementFromJson(Map<String, dynamic> json) => Element(
+ChemElement _$ChemElementFromJson(Map<String, dynamic> json) => ChemElement(
       elementId: json['elementId'] as int,
       symbol: json['symbol'] as String? ?? '',
       name: json['name'] as String? ?? '',
@@ -29,7 +29,8 @@ Element _$ElementFromJson(Map<String, dynamic> json) => Element(
           .toList(),
     );
 
-Map<String, dynamic> _$ElementToJson(Element instance) => <String, dynamic>{
+Map<String, dynamic> _$ChemElementToJson(ChemElement instance) =>
+    <String, dynamic>{
       'elementId': instance.elementId,
       'symbol': instance.symbol,
       'name': instance.name,

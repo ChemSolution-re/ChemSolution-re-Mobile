@@ -15,6 +15,16 @@ class BlogPostInfo extends Equatable {
     required this.isLiked,
   });
 
+  const BlogPostInfo.empty()
+      : information = '',
+        isLiked = false;
+
+  factory BlogPostInfo.fromJson(Map<String, dynamic> json) {
+    return _$BlogPostInfoFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() => _$BlogPostInfoToJson(this);
+
   @override
   List<Object> get props => [information, isLiked];
 }

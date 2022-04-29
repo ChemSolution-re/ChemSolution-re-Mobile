@@ -11,15 +11,17 @@ import 'package:injectable/injectable.dart' as _i2;
 import '../api/chem_solution_api_client.dart' as _i7;
 import '../api/interceptors/header_api_interceptor.dart' as _i5;
 import '../bloc/app_control/app_control_cubit.dart' as _i4;
+import '../bloc/blog_post_page/blog_post_page_cubit.dart' as _i13;
 import '../bloc/main_page/cribs_tab/cribs_tab_cubit.dart' as _i11;
 import '../bloc/main_page/elements_tab/elements_tab_cubit.dart' as _i9;
 import '../bloc/main_page/news_and_facts_tab/news_and_facts_tab_cubit.dart'
     as _i12;
+import '../models/blog_post/blog_post.dart' as _i14;
 import '../services/blog_posts_service.dart' as _i10;
 import '../services/elements_service.dart' as _i8;
 import '../services/preferences_service.dart' as _i3;
 import 'modules/api_module.dart'
-    as _i13; // ignore_for_file: unnecessary_lambdas
+    as _i15; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -49,7 +51,9 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i11.CribsTabCubit(get<_i10.BlogPostsService>()));
   gh.factory<_i12.NewsAndFactsTabCubit>(
       () => _i12.NewsAndFactsTabCubit(get<_i10.BlogPostsService>()));
+  gh.factory<_i13.BlogPostPageCubit>(() => _i13.BlogPostPageCubit(
+      get<_i10.BlogPostsService>(), get<_i14.BlogPost>()));
   return get;
 }
 
-class _$ApiModule extends _i13.ApiModule {}
+class _$ApiModule extends _i15.ApiModule {}

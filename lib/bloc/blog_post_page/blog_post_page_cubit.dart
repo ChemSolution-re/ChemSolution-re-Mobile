@@ -15,10 +15,12 @@ class BlogPostPageCubit extends BaseCubit<BlogPostPageState> {
 
   BlogPostPageCubit(
     this._blogPostsService,
-    BlogPost? blogPost,
+    @factoryParam BlogPost? blogPost,
   ) : super(BlogPostPageState(
           blogPost: blogPost!,
-        ));
+        )) {
+    init();
+  }
 
   @override
   void handleError(HandledError error) {

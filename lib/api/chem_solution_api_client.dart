@@ -31,7 +31,7 @@ abstract class ChemSolutionApiClient {
     @Path('blogPostCategory') String category,
   );
 
-  @POST('/BlogPosts/{id}')
+  @GET('/BlogPosts/{id}')
   Future<BlogPostInfo> getBlogPostInfo(
     @Path('id') String blogPostId,
   );

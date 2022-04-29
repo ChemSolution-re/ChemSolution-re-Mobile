@@ -7,7 +7,7 @@ import 'di/di.dart';
 import 'di/locator.dart';
 import 'services/preferences_service.dart';
 
-void main() async {
+Future<void> main() async {
   await Hive.initFlutter();
 
   await configureDependencies();

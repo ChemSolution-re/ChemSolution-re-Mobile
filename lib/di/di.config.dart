@@ -51,8 +51,9 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i11.CribsTabCubit(get<_i10.BlogPostsService>()));
   gh.factory<_i12.NewsAndFactsTabCubit>(
       () => _i12.NewsAndFactsTabCubit(get<_i10.BlogPostsService>()));
-  gh.factory<_i13.BlogPostPageCubit>(() => _i13.BlogPostPageCubit(
-      get<_i10.BlogPostsService>(), get<_i14.BlogPost>()));
+  gh.factoryParam<_i13.BlogPostPageCubit, _i14.BlogPost?, dynamic>(
+      (blogPost, _) =>
+          _i13.BlogPostPageCubit(get<_i10.BlogPostsService>(), blogPost));
   return get;
 }
 

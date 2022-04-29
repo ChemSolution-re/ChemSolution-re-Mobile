@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../l10n/chem_solution_localizations.dart';
 import '../models/blog_post/blog_post.dart';
+import '../pages/blog_post_page/blog_post_page.dart';
 import '../themes/main_theme.dart';
 
 class BlogPostTile extends StatelessWidget {
@@ -53,7 +54,11 @@ class BlogPostTile extends StatelessWidget {
           style: Theme.of(context).textTheme.headline2,
         ),
         TextButton(
-          onPressed: post.isLocked ? null : () {},
+          onPressed: post.isLocked
+              ? null
+              : () => Navigator.of(context).push(
+                    BlogPostPage.getRoute(post),
+                  ),
           child: Text(
             ChemSolutionLocalizations.of(context).readMore,
           ),

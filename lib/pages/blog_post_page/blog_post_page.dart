@@ -1,22 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
+import '../../bloc/blog_post_page/blog_post_page_cubit.dart';
+import '../../di/locator.dart';
 import '../../models/blog_post/blog_post.dart';
+import '../../views/animated_logo.dart';
+import '../../views/chem_solution_app_bar.dart';
+import '../../views/error_view.dart';
 
 class BlogPostPage extends StatefulWidget {
-  final BlogPost blogPost;
+  static PageRoute getRoute(BlogPost blogPost) {
+    return SwipeablePageRoute(builder: (_) {
+      return BlocProvider(
+        create: (_) => locator.get<BlogPostPageCubit>(param1: blogPost),
+        child: const BlogPostPage(),
+      );
+    });
+  }
 
-  const BlogPostPage({
-    Key? key,
-    required this.blogPost,
-  }) : super(key: key);
+  const BlogPostPage({Key? key}) : super(key: key);
 
   @override
   State<BlogPostPage> createState() => _BlogPostPageState();
 }
 
 class _BlogPostPageState extends State<BlogPostPage> {
+  BlogPostPageCubit get cubit => context.read();
+
+  void _onStateChanged(
+    BuildContext context,
+    BlogPostPageState state,
+  ) {}
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: const ChemSolutionAppBar(),
+      body: BlocConsumer<BlogPostPageCubit, BlogPostPageState>(
+        listener: _onStateChanged,
+        builder: (context, state) {
+          switch (state.status) {
+            case BlogPostPageStatus.error:
+              return ErrorView(onPressed: cubit.init);
+            case BlogPostPageStatus.errorLike:
+            case BlogPostPageStatus.success:
+            case BlogPostPageStatus.loadingLike:
+              return Column(
+                children: [
+                  Image.network(
+                    state.blogPost.image,
+                  ),
+                ],
+              );
+            case BlogPostPageStatus.loading:
+              return const Center(child: AnimatedLogo());
+          }
+        },
+      ),
+    );
   }
 }

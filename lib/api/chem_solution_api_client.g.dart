@@ -59,7 +59,7 @@ class _ChemSolutionApiClient implements ChemSolutionApiClient {
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BlogPostInfo>(
-            Options(method: 'POST', headers: _headers, extra: _extra)
+            Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/BlogPosts/$blogPostId',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));

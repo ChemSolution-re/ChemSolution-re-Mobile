@@ -34,6 +34,8 @@ class ChemElement extends Equatable {
   final ElementCategory category;
   @JsonKey(name: 'elementValences')
   final List<ElementValence> valences;
+  @JsonKey(defaultValue: false)
+  final bool isBought;
 
   const ChemElement({
     required this.elementId,
@@ -54,6 +56,7 @@ class ChemElement extends Equatable {
     required this.group,
     required this.category,
     required this.valences,
+    required this.isBought,
   });
 
   String get valenceLabel {
@@ -91,6 +94,7 @@ class ChemElement extends Equatable {
       group,
       category,
       valences,
+      isBought,
     ];
   }
 }

@@ -6,7 +6,12 @@ import '../../../../auth/login_page.dart';
 import 'profile_button.dart';
 
 class UnautorizedView extends StatelessWidget {
-  const UnautorizedView({Key? key}) : super(key: key);
+  final VoidCallback onPressed;
+
+  const UnautorizedView({
+    Key? key,
+    required this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +21,7 @@ class UnautorizedView extends StatelessWidget {
         child: ProfileButton.primary(
           title: ChemSolutionLocalizations.of(context).auth,
           iconData: CommunityMaterialIcons.login,
-          onPressed: () {
-            Navigator.of(context).push(LoginPage.getRoute());
-          },
+          onPressed: onPressed,
         ),
       ),
     );

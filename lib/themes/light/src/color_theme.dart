@@ -32,4 +32,7 @@ class _LightColorThemeData implements MainColorThemeData {
 
   @override
   Color get secondaryProfileButtonBackground => _AppColors.green;
+
+  @override
+  Color get blockedElement => _AppColors.lightGrey;
 }

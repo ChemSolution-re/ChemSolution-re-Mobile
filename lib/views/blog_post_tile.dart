@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../di/locator.dart';
 import '../l10n/chem_solution_localizations.dart';
 import '../models/blog_post/blog_post.dart';
 import '../pages/blog_post_page/blog_post_page.dart';
+import '../services/preferences_service.dart';
 import '../themes/main_theme.dart';
 
 class BlogPostTile extends StatelessWidget {
@@ -12,6 +14,8 @@ class BlogPostTile extends StatelessWidget {
     Key? key,
     required this.post,
   }) : super(key: key);
+
+  bool get isLoggedIn => locator<PreferencesService>().isLoggedIn;
 
   @override
   Widget build(BuildContext context) {
@@ -54,11 +58,11 @@ class BlogPostTile extends StatelessWidget {
           style: Theme.of(context).textTheme.headline2,
         ),
         TextButton(
-          onPressed: post.isLocked
-              ? null
-              : () => Navigator.of(context).push(
+          onPressed: !post.isLocked || isLoggedIn
+              ? () => Navigator.of(context).push(
                     BlogPostPage.getRoute(post),
-                  ),
+                  )
+              : null,
           child: Text(
             ChemSolutionLocalizations.of(context).readMore,
           ),

@@ -11,4 +11,5 @@ abstract class MainColorThemeData {
   Color get primaryProfileButtonBackground;
   Color get secondaryProfileButtonBackground;
   Color get profileButtonIcon;
+  Color get blockedElement;
 }

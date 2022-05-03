@@ -27,6 +27,7 @@ ChemElement _$ChemElementFromJson(Map<String, dynamic> json) => ChemElement(
       valences: (json['elementValences'] as List<dynamic>)
           .map((e) => ElementValence.fromJson(e as Map<String, dynamic>))
           .toList(),
+      isBought: json['isBought'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$ChemElementToJson(ChemElement instance) =>
@@ -49,6 +50,7 @@ Map<String, dynamic> _$ChemElementToJson(ChemElement instance) =>
       'group': instance.group,
       'elementCategory': _$ElementCategoryEnumMap[instance.category],
       'elementValences': instance.valences,
+      'isBought': instance.isBought,
     };
 
 const _$ElementCategoryEnumMap = {

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../di/locator.dart';
 import '../../../../../l10n/chem_solution_localizations.dart';
 import '../../../../../models/elements/chem_element.dart';
 import '../../../../../models/elements/element_category.dart';
+import '../../../../../services/preferences_service.dart';
 import '../../../../../themes/main_theme.dart';
 
 class ElementTile extends StatelessWidget {
@@ -13,13 +15,19 @@ class ElementTile extends StatelessWidget {
     required this.element,
   }) : super(key: key);
 
+  bool get isLoggedIn => locator<PreferencesService>().isLoggedIn;
+
+  bool get isLocked => isLoggedIn && (!element.isLocked || element.isBought);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: MainTheme.color(context).elementTileBackground,
+        color: isLocked
+            ? MainTheme.color(context).elementTileBackground
+            : MainTheme.color(context).blockedElement,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(

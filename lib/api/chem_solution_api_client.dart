@@ -5,6 +5,10 @@ import '../models/blog_post/blog_post.dart';
 import '../models/blog_post/blog_post_info.dart';
 import '../models/elements/chem_element.dart';
 import 'api_constants.dart';
+import 'models/forget_password_request.dart';
+import 'models/login_request.dart';
+import 'models/login_response.dart';
+import 'models/register_request.dart';
 
 part 'chem_solution_api_client.g.dart';
 
@@ -46,6 +50,22 @@ abstract class ChemSolutionApiClient {
     @Path('postId') String blogPostId,
   );
 
+  ///
   /// Auth
+  ///
 
+  @POST('/Auth/login')
+  Future<LoginResponse> login(
+    @Body() LoginRequest body,
+  );
+
+  @POST('/Auth/register')
+  Future<void> register(
+    @Body() RegisterRequest body,
+  );
+
+  @POST('/Auth/forgot-password')
+  Future<void> forgotPassword(
+    @Body() ForgetPasswordRequest body,
+  );
 }

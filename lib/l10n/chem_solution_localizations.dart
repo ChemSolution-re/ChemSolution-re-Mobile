@@ -319,6 +319,42 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Пароль повинен мати не менше за 7 символів та не більше за 32 серед яких: літери верхнього й нижнього регістру, хоча б одна цифра або спеціальний символ'**
   String get passwordValidator;
+
+  /// No description provided for @restorePassword.
+  ///
+  /// In uk, this message translates to:
+  /// **'Відновлення паролю'**
+  String get restorePassword;
+
+  /// No description provided for @restore.
+  ///
+  /// In uk, this message translates to:
+  /// **'Відновити'**
+  String get restore;
+
+  /// No description provided for @doneSuccessCheckEmail.
+  ///
+  /// In uk, this message translates to:
+  /// **'Успішно! Перевірте вашу пошту'**
+  String get doneSuccessCheckEmail;
+
+  /// No description provided for @username.
+  ///
+  /// In uk, this message translates to:
+  /// **'Імʼя користувача'**
+  String get username;
+
+  /// No description provided for @birthday.
+  ///
+  /// In uk, this message translates to:
+  /// **'Дата народження'**
+  String get birthday;
+
+  /// No description provided for @requiredField.
+  ///
+  /// In uk, this message translates to:
+  /// **'Поле обовʼязкове для заповнення'**
+  String get requiredField;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

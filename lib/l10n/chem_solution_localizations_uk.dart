@@ -120,4 +120,22 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get passwordValidator => 'Пароль повинен мати не менше за 7 символів та не більше за 32 серед яких: літери верхнього й нижнього регістру, хоча б одна цифра або спеціальний символ';
+
+  @override
+  String get restorePassword => 'Відновлення паролю';
+
+  @override
+  String get restore => 'Відновити';
+
+  @override
+  String get doneSuccessCheckEmail => 'Успішно! Перевірте вашу пошту';
+
+  @override
+  String get username => 'Імʼя користувача';
+
+  @override
+  String get birthday => 'Дата народження';
+
+  @override
+  String get requiredField => 'Поле обовʼязкове для заповнення';
 }

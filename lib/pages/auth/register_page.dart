@@ -5,7 +5,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
-import '../../bloc/auth/login_page/login_page_cubit.dart';
+import '../../bloc/auth/register_page/register_page_cubit.dart';
 import '../../di/locator.dart';
 import '../../l10n/chem_solution_localizations.dart';
 import '../../themes/main_theme.dart';
@@ -14,50 +14,51 @@ import '../../utils/validators.dart';
 import '../../views/animated_logo.dart';
 import '../../views/chem_solution_app_bar.dart';
 import 'forget_password_page.dart';
-import 'register_page.dart';
 
 enum AuthFields {
   email,
   password,
+  username,
+  birthay,
 }
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   static PageRoute getRoute() {
     return SwipeablePageRoute(builder: (_) {
       return BlocProvider(
-        create: (_) => locator<LoginPageCubit>(),
-        child: const LoginPage(),
+        create: (_) => locator<RegisterPageCubit>(),
+        child: const RegisterPage(),
       );
     });
   }
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final _fbKey = GlobalKey<FormBuilderState>();
 
   FormBuilderState? get _fbState => _fbKey.currentState;
   Map<String, dynamic> get _fbValue => _fbState?.value ?? {};
 
-  LoginPageCubit get cubit => context.read();
+  RegisterPageCubit get cubit => context.read();
 
   void _onChanged(
     BuildContext context,
-    LoginPageState state,
+    RegisterPageState state,
   ) {
     switch (state.status) {
-      case LoginPageStatus.error:
+      case RegisterPageStatus.error:
         ChemSolutionToasts.of(context).showError(
           message: state.error.errorMessage,
         );
         break;
-      case LoginPageStatus.success:
+      case RegisterPageStatus.success:
         ChemSolutionToasts.of(context).showSuccess(
-          message: ChemSolutionLocalizations.of(context).youAreAuth,
+          message: ChemSolutionLocalizations.of(context).doneSuccessCheckEmail,
         );
         Navigator.of(context).pop();
         break;
@@ -69,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const ChemSolutionAppBar(),
-      body: BlocConsumer<LoginPageCubit, LoginPageState>(
+      body: BlocConsumer<RegisterPageCubit, RegisterPageState>(
         listener: _onChanged,
         builder: (context, state) {
           return Container(
@@ -80,25 +81,60 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    ChemSolutionLocalizations.of(context).auth,
+                    ChemSolutionLocalizations.of(context).register,
                     style: MainTheme.text(context).authTitle,
                     textAlign: TextAlign.center,
                   ),
+                  const SizedBox(height: 16),
+                  _buildNameField(),
+                  const SizedBox(height: 16),
+                  _buildBirthdayField(),
                   const SizedBox(height: 16),
                   _buildEmailField(),
                   const SizedBox(height: 16),
                   _buildPasswordField(state),
                   const SizedBox(height: 16),
                   _buildSignInButton(state),
-                  const SizedBox(height: 16),
-                  _buildRegisterButton(),
-                  const SizedBox(height: 16),
-                  _buildForgetPasswordButton()
                 ],
               ),
             ),
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildNameField() {
+    return FormBuilderTextField(
+      name: AuthFields.username.name,
+      decoration: InputDecoration(
+        prefixIcon: const Icon(Icons.person),
+        labelText: ChemSolutionLocalizations.of(context).username,
+        errorMaxLines: 5,
+      ),
+      onChanged: (_) => _fbState?.save(),
+      validator: FormBuilderValidators.required(
+        context,
+        errorText: ChemSolutionLocalizations.of(context).requiredField,
+      ),
+    );
+  }
+
+  Widget _buildBirthdayField() {
+    return FormBuilderDateTimePicker(
+      name: AuthFields.birthay.name,
+      initialEntryMode: DatePickerEntryMode.calendarOnly,
+      initialDatePickerMode: DatePickerMode.year,
+      lastDate: DateTime.now(),
+      decoration: InputDecoration(
+        prefixIcon: const Icon(Icons.cake),
+        labelText: ChemSolutionLocalizations.of(context).birthday,
+        errorMaxLines: 5,
+      ),
+      onChanged: (_) => _fbState?.save(),
+      validator: FormBuilderValidators.required(
+        context,
+        errorText: ChemSolutionLocalizations.of(context).requiredField,
       ),
     );
   }
@@ -119,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildPasswordField(LoginPageState state) {
+  Widget _buildPasswordField(RegisterPageState state) {
     return FormBuilderTextField(
       name: AuthFields.password.name,
       obscureText: state.obscureText,
@@ -141,48 +177,23 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildSignInButton(LoginPageState state) {
+  Widget _buildSignInButton(RegisterPageState state) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
           if (_fbState?.saveAndValidate() ?? false) {
-            cubit.login(
-              _fbValue[AuthFields.email.name],
-              _fbValue[AuthFields.password.name],
+            cubit.register(
+              userEmail: _fbValue[AuthFields.email.name],
+              dateOfBirth: _fbValue[AuthFields.birthay.name],
+              password: _fbValue[AuthFields.password.name],
+              userName: _fbValue[AuthFields.username.name],
             );
           }
         },
-        child: state.status == LoginPageStatus.loading
+        child: state.status == RegisterPageStatus.loading
             ? const AnimatedLogo(height: 20)
-            : Text(ChemSolutionLocalizations.of(context).signIn),
-      ),
-    );
-  }
-
-  Widget _buildRegisterButton() {
-    return SizedBox(
-      width: double.infinity,
-      child: TextButton(
-        onPressed: () {
-          Navigator.of(context).push(RegisterPage.getRoute());
-        },
-        child: Text(ChemSolutionLocalizations.of(context).register),
-      ),
-    );
-  }
-
-  Widget _buildForgetPasswordButton() {
-    return SizedBox(
-      width: double.infinity,
-      child: TextButton(
-        onPressed: () {
-          Navigator.of(context).push(ForgetPasswordPage.getRoute());
-        },
-        child: Text(
-          ChemSolutionLocalizations.of(context).forgetPassword,
-          style: Theme.of(context).textTheme.headline6,
-        ),
+            : Text(ChemSolutionLocalizations.of(context).signUp),
       ),
     );
   }

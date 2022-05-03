@@ -14,18 +14,19 @@ import '../bloc/app_control/app_control_cubit.dart' as _i4;
 import '../bloc/auth/forget_password_page/forget_password_page_cubit.dart'
     as _i13;
 import '../bloc/auth/login_page/login_page_cubit.dart' as _i14;
-import '../bloc/blog_post_page/blog_post_page_cubit.dart' as _i16;
+import '../bloc/auth/register_page/register_page_cubit.dart' as _i16;
+import '../bloc/blog_post_page/blog_post_page_cubit.dart' as _i17;
 import '../bloc/main_page/cribs_tab/cribs_tab_cubit.dart' as _i12;
 import '../bloc/main_page/elements_tab/elements_tab_cubit.dart' as _i9;
 import '../bloc/main_page/news_and_facts_tab/news_and_facts_tab_cubit.dart'
     as _i15;
-import '../models/blog_post/blog_post.dart' as _i17;
+import '../models/blog_post/blog_post.dart' as _i18;
 import '../services/auth_service.dart' as _i10;
 import '../services/blog_posts_service.dart' as _i11;
 import '../services/elements_service.dart' as _i8;
 import '../services/preferences_service.dart' as _i3;
 import 'modules/api_module.dart'
-    as _i18; // ignore_for_file: unnecessary_lambdas
+    as _i19; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -61,10 +62,12 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       get<_i10.AuthService>(), get<_i3.PreferencesService>()));
   gh.factory<_i15.NewsAndFactsTabCubit>(
       () => _i15.NewsAndFactsTabCubit(get<_i11.BlogPostsService>()));
-  gh.factoryParam<_i16.BlogPostPageCubit, _i17.BlogPost?, dynamic>(
+  gh.factory<_i16.RegisterPageCubit>(
+      () => _i16.RegisterPageCubit(get<_i10.AuthService>()));
+  gh.factoryParam<_i17.BlogPostPageCubit, _i18.BlogPost?, dynamic>(
       (blogPost, _) =>
-          _i16.BlogPostPageCubit(get<_i11.BlogPostsService>(), blogPost));
+          _i17.BlogPostPageCubit(get<_i11.BlogPostsService>(), blogPost));
   return get;
 }
 
-class _$ApiModule extends _i18.ApiModule {}
+class _$ApiModule extends _i19.ApiModule {}

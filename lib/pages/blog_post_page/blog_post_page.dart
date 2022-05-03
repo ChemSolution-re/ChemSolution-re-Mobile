@@ -1,7 +1,6 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 import '../../bloc/blog_post_page/blog_post_page_cubit.dart';

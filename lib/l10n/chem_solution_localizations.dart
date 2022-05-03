@@ -242,6 +242,12 @@ abstract class ChemSolutionLocalizations {
   /// **'Неметали'**
   String get nonMetals;
 
+  /// No description provided for @unknown.
+  ///
+  /// In uk, this message translates to:
+  /// **'Невідомо'**
+  String get unknown;
+
   /// No description provided for @readMore.
   ///
   /// In uk, this message translates to:
@@ -253,6 +259,12 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Авторизація'**
   String get auth;
+
+  /// No description provided for @nd.
+  ///
+  /// In uk, this message translates to:
+  /// **'Н/Д'**
+  String get nd;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

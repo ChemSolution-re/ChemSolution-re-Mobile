@@ -22,6 +22,8 @@ enum ElementCategory {
   nobleGases,
   @JsonValue('Non_metals')
   nonMetals,
+  @JsonValue('Unknown')
+  unknown,
 }
 
 extension ElementCategoryExt on ElementCategory {
@@ -46,6 +48,8 @@ extension ElementCategoryExt on ElementCategory {
         return loc.semiMetals;
       case ElementCategory.transitionMetals:
         return loc.transitionMetals;
+      case ElementCategory.unknown:
+        return loc.unknown;
     }
   }
 }

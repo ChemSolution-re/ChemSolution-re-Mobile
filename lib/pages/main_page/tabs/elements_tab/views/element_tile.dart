@@ -29,6 +29,7 @@ class ElementTile extends StatelessWidget {
             child: Image.network(
               element.imgSymbol,
               height: 160,
+              width: 160,
             ),
           ),
           const SizedBox(width: 16),

@@ -12,7 +12,7 @@ ChemElement _$ChemElementFromJson(Map<String, dynamic> json) => ChemElement(
       name: json['name'] as String? ?? '',
       atomicWeight: (json['atomicWeight'] as num).toDouble(),
       neutronQuantity: json['neutronQuantity'] as int,
-      atomicRadius: (json['atomicRadius'] as num).toDouble(),
+      atomicRadius: (json['atomicRadius'] as num?)?.toDouble(),
       electronegativity: (json['electronegativity'] as num?)?.toDouble(),
       energyLevels: json['energyLevels'] as int,
       meltingTemperature: (json['meltingTemperature'] as num?)?.toDouble(),
@@ -61,4 +61,5 @@ const _$ElementCategoryEnumMap = {
   ElementCategory.postTransitionMetals: 'Post_transitionMetals',
   ElementCategory.nobleGases: 'NobleGases',
   ElementCategory.nonMetals: 'Non_metals',
+  ElementCategory.unknown: 'Unknown',
 };

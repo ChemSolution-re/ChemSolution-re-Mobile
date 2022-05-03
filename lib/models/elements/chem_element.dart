@@ -16,7 +16,7 @@ class ChemElement extends Equatable {
   final String name;
   final double atomicWeight;
   final int neutronQuantity;
-  final double atomicRadius;
+  final double? atomicRadius;
   final double? electronegativity;
   final int energyLevels;
   final double? meltingTemperature;

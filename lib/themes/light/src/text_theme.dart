@@ -12,4 +12,10 @@ class _LightTextThemeData implements MainTextThemeData {
   TextStyle get profileButtonTitle => _headline1.copyWith(
         fontWeight: FontWeight.w300,
       );
+
+  @override
+  TextStyle get authTitle => _headline1.copyWith(
+        fontWeight: FontWeight.w300,
+        fontSize: 38,
+      );
 }

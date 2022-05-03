@@ -93,4 +93,22 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get nd => 'Н/Д';
+
+  @override
+  String get register => 'Реєстрація';
+
+  @override
+  String get email => 'Електронна пошта';
+
+  @override
+  String get password => 'Пароль';
+
+  @override
+  String get signIn => 'Вхід';
+
+  @override
+  String get signUp => 'Зареєструватися';
+
+  @override
+  String get forgetPassword => 'Забули пароль?';
 }

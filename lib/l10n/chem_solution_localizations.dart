@@ -265,6 +265,42 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Н/Д'**
   String get nd;
+
+  /// No description provided for @register.
+  ///
+  /// In uk, this message translates to:
+  /// **'Реєстрація'**
+  String get register;
+
+  /// No description provided for @email.
+  ///
+  /// In uk, this message translates to:
+  /// **'Електронна пошта'**
+  String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In uk, this message translates to:
+  /// **'Пароль'**
+  String get password;
+
+  /// No description provided for @signIn.
+  ///
+  /// In uk, this message translates to:
+  /// **'Вхід'**
+  String get signIn;
+
+  /// No description provided for @signUp.
+  ///
+  /// In uk, this message translates to:
+  /// **'Зареєструватися'**
+  String get signUp;
+
+  /// No description provided for @forgetPassword.
+  ///
+  /// In uk, this message translates to:
+  /// **'Забули пароль?'**
+  String get forgetPassword;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

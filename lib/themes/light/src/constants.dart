@@ -7,8 +7,8 @@ const _headline2 = _TextStyle(26, FontWeight.w600, _AppColors.darkBlue);
 const _headline3 = _TextStyle(22, FontWeight.w600, _AppColors.darkBlue);
 const _headline4 = _TextStyle(20, FontWeight.w600, _AppColors.darkBlue);
 const _headline5 = _TextStyle(18, FontWeight.w400, _AppColors.darkBlue);
-const _headline6 = _TextStyle(16, FontWeight.w400, _AppColors.darkBlue);
-const _subtitle1 = _TextStyle(12, FontWeight.w600, _AppColors.blue);
+const _headline6 = _TextStyle(16, FontWeight.w400, _AppColors.blue);
+const _subtitle1 = _TextStyle(16, FontWeight.w600, _AppColors.darkBlue);
 const _subtitle2 = _TextStyle(12, FontWeight.w400, _AppColors.darkGreen);
 const _bodyText1 = _TextStyle(16, FontWeight.w400, _AppColors.darkGreen);
 

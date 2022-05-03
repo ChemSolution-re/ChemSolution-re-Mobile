@@ -45,4 +45,7 @@ abstract class ChemSolutionApiClient {
   Future<void> dislikePost(
     @Path('postId') String blogPostId,
   );
+
+  /// Auth
+
 }

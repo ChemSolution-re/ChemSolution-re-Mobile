@@ -12,7 +12,7 @@ import '../../utils/chem_solution_toasts.dart';
 import '../../views/chem_solution_app_bar.dart';
 
 enum AuthFields {
-  login,
+  email,
   password,
 }
 
@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _buildEmailField() {
     return FormBuilderTextField(
-      name: AuthFields.login.name,
+      name: AuthFields.email.name,
       decoration: InputDecoration(
         prefixIcon: const Icon(CommunityMaterialIcons.email),
         labelText: ChemSolutionLocalizations.of(context).email,

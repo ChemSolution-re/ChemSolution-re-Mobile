@@ -2,6 +2,7 @@ import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 import '../../bloc/auth/login_page/login_page_cubit.dart';
@@ -9,6 +10,8 @@ import '../../di/locator.dart';
 import '../../l10n/chem_solution_localizations.dart';
 import '../../themes/main_theme.dart';
 import '../../utils/chem_solution_toasts.dart';
+import '../../utils/validators.dart';
+import '../../views/animated_logo.dart';
 import '../../views/chem_solution_app_bar.dart';
 
 enum AuthFields {
@@ -54,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
         ChemSolutionToasts.of(context).showSuccess(
           message: ChemSolutionLocalizations.of(context).youAreAuth,
         );
+        Navigator.of(context).pop();
         break;
       default:
     }
@@ -83,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(height: 16),
                   _buildPasswordField(state),
                   const SizedBox(height: 16),
-                  _buildSignInButton(),
+                  _buildSignInButton(state),
                   const SizedBox(height: 16),
                   _buildRegisterButton(),
                   const SizedBox(height: 16),
@@ -103,8 +107,13 @@ class _LoginPageState extends State<LoginPage> {
       decoration: InputDecoration(
         prefixIcon: const Icon(CommunityMaterialIcons.email),
         labelText: ChemSolutionLocalizations.of(context).email,
+        errorMaxLines: 5,
       ),
       onChanged: (_) => _fbState?.save(),
+      validator: FormBuilderValidators.email(
+        context,
+        errorText: ChemSolutionLocalizations.of(context).emailValidator,
+      ),
     );
   }
 
@@ -112,8 +121,10 @@ class _LoginPageState extends State<LoginPage> {
     return FormBuilderTextField(
       name: AuthFields.password.name,
       obscureText: state.obscureText,
+      validator: passwordValidator(context),
       decoration: InputDecoration(
         prefixIcon: const Icon(CommunityMaterialIcons.key_chain_variant),
+        errorMaxLines: 6,
         labelText: ChemSolutionLocalizations.of(context).password,
         suffixIcon: IconButton(
           onPressed: cubit.changeObscureText,
@@ -128,12 +139,21 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildSignInButton() {
+  Widget _buildSignInButton(LoginPageState state) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
-        child: Text(ChemSolutionLocalizations.of(context).signIn),
+        onPressed: () {
+          if (_fbState?.saveAndValidate() ?? false) {
+            cubit.login(
+              _fbValue[AuthFields.email.name],
+              _fbValue[AuthFields.password.name],
+            );
+          }
+        },
+        child: state.status == LoginPageStatus.loading
+            ? const AnimatedLogo(height: 20)
+            : Text(ChemSolutionLocalizations.of(context).signIn),
       ),
     );
   }

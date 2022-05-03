@@ -307,6 +307,18 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Ви успішно авторизовані'**
   String get youAreAuth;
+
+  /// No description provided for @emailValidator.
+  ///
+  /// In uk, this message translates to:
+  /// **'Некоректний email: має містити домен пошти, букви латинського алфавіту, цифри та не містити пробілів'**
+  String get emailValidator;
+
+  /// No description provided for @passwordValidator.
+  ///
+  /// In uk, this message translates to:
+  /// **'Пароль повинен мати не менше за 7 символів та не більше за 32 серед яких: літери верхнього й нижнього регістру, хоча б одна цифра або спеціальний символ'**
+  String get passwordValidator;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

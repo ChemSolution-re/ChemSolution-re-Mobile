@@ -114,4 +114,10 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get youAreAuth => 'Ви успішно авторизовані';
+
+  @override
+  String get emailValidator => 'Некоректний email: має містити домен пошти, букви латинського алфавіту, цифри та не містити пробілів';
+
+  @override
+  String get passwordValidator => 'Пароль повинен мати не менше за 7 символів та не більше за 32 серед яких: літери верхнього й нижнього регістру, хоча б одна цифра або спеціальний символ';
 }

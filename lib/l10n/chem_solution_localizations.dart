@@ -301,6 +301,12 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Забули пароль?'**
   String get forgetPassword;
+
+  /// No description provided for @youAreAuth.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви успішно авторизовані'**
+  String get youAreAuth;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

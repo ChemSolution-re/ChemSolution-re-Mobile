@@ -111,4 +111,7 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get forgetPassword => 'Забули пароль?';
+
+  @override
+  String get youAreAuth => 'Ви успішно авторизовані';
 }

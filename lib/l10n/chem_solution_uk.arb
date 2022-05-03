@@ -34,5 +34,6 @@
     "password": "Пароль",
     "signIn": "Вхід",
     "signUp": "Зареєструватися",
-    "forgetPassword": "Забули пароль?"
+    "forgetPassword": "Забули пароль?",
+    "youAreAuth":  "Ви успішно авторизовані"
 }

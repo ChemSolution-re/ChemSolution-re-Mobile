@@ -8,6 +8,7 @@ import '../../../../utils/chem_solution_toasts.dart';
 import '../../../../views/animated_logo.dart';
 import '../../../../views/blog_post_tile.dart';
 import '../../../../views/chem_solution_app_bar.dart';
+import '../../../../views/empty_view.dart';
 import '../../../../views/error_view.dart';
 
 enum CribsTabFields { searching }
@@ -81,13 +82,15 @@ class _CribsTabState extends State<CribsTab> {
       case CribsTabStatus.error:
         return ErrorView(onPressed: cubit.loadPosts);
       case CribsTabStatus.success:
-        return ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (_, index) {
-            return BlogPostTile(post: state.selectedPosts[index]);
-          },
-          itemCount: state.selectedPosts.length,
-        );
+        return state.selectedPosts.isEmpty
+            ? const EmptyView()
+            : ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (_, index) {
+                  return BlogPostTile(post: state.selectedPosts[index]);
+                },
+                itemCount: state.selectedPosts.length,
+              );
     }
   }
 }

@@ -48,5 +48,6 @@
     "achievemens": "Досягнення",
     "requests": "Запити",
     "openedMaterials": "Відкриті речовини",
-    "logout": "Вихід"
+    "logout": "Вихід",
+    "nothingFind": "Нічого не знайдено"
 }

@@ -385,6 +385,12 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Вихід'**
   String get logout;
+
+  /// No description provided for @nothingFind.
+  ///
+  /// In uk, this message translates to:
+  /// **'Нічого не знайдено'**
+  String get nothingFind;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

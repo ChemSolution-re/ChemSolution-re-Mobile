@@ -22,7 +22,7 @@ class AuthorizedView extends StatelessWidget {
             children: [
               ProfileButton.primary(
                 title: ChemSolutionLocalizations.of(context).myProfile,
-                iconData: Icons.person_outline_sharp,
+                iconData: CommunityMaterialIcons.face_shimmer,
                 onPressed: () {},
               ),
               ProfileButton.secondary(
@@ -42,7 +42,7 @@ class AuthorizedView extends StatelessWidget {
               ),
               ProfileButton.primary(
                 title: ChemSolutionLocalizations.of(context).openedMaterials,
-                iconData: CommunityMaterialIcons.atom_variant,
+                iconData: CommunityMaterialIcons.flask,
                 onPressed: () {},
               ),
               ProfileButton.secondary(

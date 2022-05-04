@@ -153,4 +153,7 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get logout => 'Вихід';
+
+  @override
+  String get nothingFind => 'Нічого не знайдено';
 }

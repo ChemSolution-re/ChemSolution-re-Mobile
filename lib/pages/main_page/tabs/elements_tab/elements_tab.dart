@@ -7,6 +7,7 @@ import '../../../../di/locator.dart';
 import '../../../../utils/chem_solution_toasts.dart';
 import '../../../../views/animated_logo.dart';
 import '../../../../views/chem_solution_app_bar.dart';
+import '../../../../views/empty_view.dart';
 import '../../../../views/error_view.dart';
 import 'views/element_tile.dart';
 
@@ -81,13 +82,15 @@ class _ElementsTabState extends State<ElementsTab> {
       case ElementTabStatus.error:
         return ErrorView(onPressed: cubit.loadElements);
       case ElementTabStatus.success:
-        return ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (_, index) {
-            return ElementTile(element: state.selectedElements[index]);
-          },
-          itemCount: state.selectedElements.length,
-        );
+        return state.selectedElements.isEmpty
+            ? const EmptyView()
+            : ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (_, index) {
+                  return ElementTile(element: state.selectedElements[index]);
+                },
+                itemCount: state.selectedElements.length,
+              );
     }
   }
 }

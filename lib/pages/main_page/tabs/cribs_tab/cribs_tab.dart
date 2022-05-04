@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 import '../../../../bloc/main_page/cribs_tab/cribs_tab_cubit.dart';
 import '../../../../di/locator.dart';
@@ -8,6 +9,8 @@ import '../../../../views/animated_logo.dart';
 import '../../../../views/blog_post_tile.dart';
 import '../../../../views/chem_solution_app_bar.dart';
 import '../../../../views/error_view.dart';
+
+enum CribsTabFields { searching }
 
 class CribsTab extends StatefulWidget {
   static Widget create() {
@@ -24,6 +27,11 @@ class CribsTab extends StatefulWidget {
 }
 
 class _CribsTabState extends State<CribsTab> {
+  final _fbKey = GlobalKey<FormBuilderState>();
+
+  FormBuilderState? get _fbState => _fbKey.currentState;
+  Map<String, dynamic> get _fbValue => _fbState?.value ?? {};
+
   CribsTabCubit get cubit => context.read();
 
   void _onStateChanged(
@@ -47,6 +55,18 @@ class _CribsTabState extends State<CribsTab> {
             isLeadingIconEnabled: false,
             isSearching: state.isSearching,
             onSearchIconPressed: cubit.changeSearching,
+            searchingWidget: FormBuilder(
+              key: _fbKey,
+              child: FormBuilderTextField(
+                name: CribsTabFields.searching.name,
+                autofocus: true,
+                style: Theme.of(context).textTheme.headline6,
+                onChanged: (_) {
+                  _fbState?.save();
+                  cubit.filter(_fbValue[CribsTabFields.searching.name]);
+                },
+              ),
+            ),
           ),
           body: _buildBody(state),
         );

@@ -30,6 +30,7 @@ class CribsTabCubit extends BaseCubit<CribsTabState> {
   void changeSearching() {
     emit(state.copyWith(
       isSearching: !state.isSearching,
+      selectedPosts: state.allPosts,
     ));
   }
 
@@ -40,9 +41,18 @@ class CribsTabCubit extends BaseCubit<CribsTabState> {
         BlogPostCategory.crib,
       );
       emit(state.copyWith(
-        posts: posts,
+        allPosts: posts,
+        selectedPosts: posts,
         status: CribsTabStatus.success,
       ));
     });
+  }
+
+  void filter(String? value) {
+    final searched = (value ?? '').toLowerCase();
+    final posts = state.allPosts.where((element) {
+      return element.title.toLowerCase().contains(searched);
+    }).toList();
+    emit(state.copyWith(selectedPosts: posts));
   }
 }

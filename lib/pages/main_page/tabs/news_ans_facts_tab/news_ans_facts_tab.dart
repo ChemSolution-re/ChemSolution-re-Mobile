@@ -64,9 +64,9 @@ class _NewsAndFactsTabState extends State<NewsAndFactsTab> {
         return ListView.builder(
           physics: const BouncingScrollPhysics(),
           itemBuilder: (_, index) {
-            return BlogPostTile(post: state.posts[index]);
+            return BlogPostTile(post: state.selectedPosts[index]);
           },
-          itemCount: state.posts.length,
+          itemCount: state.selectedPosts.length,
         );
     }
   }

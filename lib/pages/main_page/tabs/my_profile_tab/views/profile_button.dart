@@ -40,20 +40,23 @@ class ProfileButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      tileColor: getColor(context),
-      onTap: onPressed,
-      contentPadding: const EdgeInsets.all(16),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
-      leading: Icon(
-        iconData,
-        size: 32,
-      ),
-      title: Text(
-        title,
-        style: MainTheme.text(context).profileButtonTitle,
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      child: ListTile(
+        tileColor: getColor(context),
+        onTap: onPressed,
+        contentPadding: const EdgeInsets.all(16),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        leading: Icon(
+          iconData,
+          size: 32,
+        ),
+        title: Text(
+          title,
+          style: MainTheme.text(context).profileButtonTitle,
+        ),
       ),
     );
   }

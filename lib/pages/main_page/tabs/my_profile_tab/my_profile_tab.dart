@@ -26,17 +26,24 @@ class _MyProfileTabState extends State<MyProfileTab> {
     setState(() {});
   }
 
+  Future<void> logout() async {
+    await locator<PreferencesService>().logout();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const ChemSolutionAppBar(
         isLeadingIconEnabled: false,
       ),
-      body: isLoggedIn
-          ? const AuthorizedView()
-          : UnautorizedView(
-              onPressed: onAuth,
-            ),
+      body: AnimatedSwitcher(
+        key: ValueKey(isLoggedIn),
+        duration: const Duration(milliseconds: 300),
+        child: isLoggedIn
+            ? AuthorizedView(logout: logout)
+            : UnautorizedView(onPressed: onAuth),
+      ),
     );
   }
 }

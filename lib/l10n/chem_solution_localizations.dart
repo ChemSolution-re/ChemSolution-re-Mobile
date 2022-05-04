@@ -355,6 +355,36 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Поле обовʼязкове для заповнення'**
   String get requiredField;
+
+  /// No description provided for @saved.
+  ///
+  /// In uk, this message translates to:
+  /// **'Збережене'**
+  String get saved;
+
+  /// No description provided for @achievemens.
+  ///
+  /// In uk, this message translates to:
+  /// **'Досягнення'**
+  String get achievemens;
+
+  /// No description provided for @requests.
+  ///
+  /// In uk, this message translates to:
+  /// **'Запити'**
+  String get requests;
+
+  /// No description provided for @openedMaterials.
+  ///
+  /// In uk, this message translates to:
+  /// **'Відкриті речовини'**
+  String get openedMaterials;
+
+  /// No description provided for @logout.
+  ///
+  /// In uk, this message translates to:
+  /// **'Вихід'**
+  String get logout;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

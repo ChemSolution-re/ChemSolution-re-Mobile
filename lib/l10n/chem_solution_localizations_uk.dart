@@ -138,4 +138,19 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get requiredField => 'Поле обовʼязкове для заповнення';
+
+  @override
+  String get saved => 'Збережене';
+
+  @override
+  String get achievemens => 'Досягнення';
+
+  @override
+  String get requests => 'Запити';
+
+  @override
+  String get openedMaterials => 'Відкриті речовини';
+
+  @override
+  String get logout => 'Вихід';
 }

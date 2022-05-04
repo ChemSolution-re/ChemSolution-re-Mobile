@@ -43,5 +43,10 @@
     "doneSuccessCheckEmail": "Успішно! Перевірте вашу пошту",
     "username": "Імʼя користувача",
     "birthday": "Дата народження",
-    "requiredField": "Поле обовʼязкове для заповнення"
+    "requiredField": "Поле обовʼязкове для заповнення",
+    "saved": "Збережене",
+    "achievemens": "Досягнення",
+    "requests": "Запити",
+    "openedMaterials": "Відкриті речовини",
+    "logout": "Вихід"
 }

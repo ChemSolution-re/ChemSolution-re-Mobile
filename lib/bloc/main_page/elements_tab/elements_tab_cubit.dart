@@ -29,6 +29,7 @@ class ElementsTabCubit extends BaseCubit<ElementsTabState> {
   void changeSearching() {
     emit(state.copyWith(
       isSearching: !state.isSearching,
+      selectedElements: state.allElements,
     ));
   }
 
@@ -38,9 +39,19 @@ class ElementsTabCubit extends BaseCubit<ElementsTabState> {
     await makeErrorHandledCall(() async {
       final elements = await _elementsService.getAllElements();
       emit(state.copyWith(
-        elements: elements,
+        allElements: elements,
+        selectedElements: elements,
         status: ElementTabStatus.success,
       ));
     });
+  }
+
+  void filter(String? value) {
+    final searched = (value ?? '').toLowerCase();
+    final elements = state.allElements.where((element) {
+      return element.symbol.toLowerCase().contains(searched) ||
+          element.name.toLowerCase().contains(searched);
+    }).toList();
+    emit(state.copyWith(selectedElements: elements));
   }
 }

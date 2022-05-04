@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 
 import '../../../../bloc/main_page/elements_tab/elements_tab_cubit.dart';
 import '../../../../di/locator.dart';
@@ -8,6 +9,8 @@ import '../../../../views/animated_logo.dart';
 import '../../../../views/chem_solution_app_bar.dart';
 import '../../../../views/error_view.dart';
 import 'views/element_tile.dart';
+
+enum ElementsTabFields { searching }
 
 class ElementsTab extends StatefulWidget {
   static Widget create() {
@@ -24,6 +27,11 @@ class ElementsTab extends StatefulWidget {
 }
 
 class _ElementsTabState extends State<ElementsTab> {
+  final _fbKey = GlobalKey<FormBuilderState>();
+
+  FormBuilderState? get _fbState => _fbKey.currentState;
+  Map<String, dynamic> get _fbValue => _fbState?.value ?? {};
+
   ElementsTabCubit get cubit => context.read();
 
   void _onStateChanged(
@@ -47,6 +55,18 @@ class _ElementsTabState extends State<ElementsTab> {
             isLeadingIconEnabled: false,
             isSearching: state.isSearching,
             onSearchIconPressed: cubit.changeSearching,
+            searchingWidget: FormBuilder(
+              key: _fbKey,
+              child: FormBuilderTextField(
+                name: ElementsTabFields.searching.name,
+                autofocus: true,
+                style: Theme.of(context).textTheme.headline6,
+                onChanged: (_) {
+                  _fbState?.save();
+                  cubit.filter(_fbValue[ElementsTabFields.searching.name]);
+                },
+              ),
+            ),
           ),
           body: _buildBody(state),
         );
@@ -64,9 +84,9 @@ class _ElementsTabState extends State<ElementsTab> {
         return ListView.builder(
           physics: const BouncingScrollPhysics(),
           itemBuilder: (_, index) {
-            return ElementTile(element: state.elements[index]);
+            return ElementTile(element: state.selectedElements[index]);
           },
-          itemCount: state.elements.length,
+          itemCount: state.selectedElements.length,
         );
     }
   }

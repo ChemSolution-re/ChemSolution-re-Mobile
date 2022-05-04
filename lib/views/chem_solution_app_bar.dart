@@ -9,6 +9,7 @@ class ChemSolutionAppBar extends StatefulWidget implements PreferredSizeWidget {
   final bool isSearching;
   final VoidCallback? onSearchIconPressed;
   final Widget? titleWidget;
+  final Widget? searchingWidget;
 
   const ChemSolutionAppBar({
     Key? key,
@@ -16,6 +17,7 @@ class ChemSolutionAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.isSearching = false,
     this.titleWidget,
     this.onSearchIconPressed,
+    this.searchingWidget,
   }) : super(key: key);
 
   @override
@@ -33,11 +35,13 @@ class _ChemSolutionAppBarState extends State<ChemSolutionAppBar> {
     return AppBar(
       leading: _buildLeading(),
       centerTitle: false,
-      title: widget.titleWidget ??
-          Text(
-            ChemSolutionLocalizations.of(context).appName,
-            style: MainTheme.text(context).appTitle,
-          ),
+      title: widget.isSearching
+          ? widget.searchingWidget ?? const SizedBox.shrink()
+          : widget.titleWidget ??
+              Text(
+                ChemSolutionLocalizations.of(context).appName,
+                style: MainTheme.text(context).appTitle,
+              ),
       actions: [
         if (onSearchIconPressed != null)
           IconButton(

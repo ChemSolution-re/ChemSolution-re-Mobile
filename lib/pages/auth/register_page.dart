@@ -13,9 +13,8 @@ import '../../utils/chem_solution_toasts.dart';
 import '../../utils/validators.dart';
 import '../../views/animated_logo.dart';
 import '../../views/chem_solution_app_bar.dart';
-import 'forget_password_page.dart';
 
-enum AuthFields {
+enum RegisterFields {
   email,
   password,
   username,
@@ -106,7 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _buildNameField() {
     return FormBuilderTextField(
-      name: AuthFields.username.name,
+      name: RegisterFields.username.name,
       decoration: InputDecoration(
         prefixIcon: const Icon(Icons.person),
         labelText: ChemSolutionLocalizations.of(context).username,
@@ -122,7 +121,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _buildBirthdayField() {
     return FormBuilderDateTimePicker(
-      name: AuthFields.birthay.name,
+      name: RegisterFields.birthay.name,
       initialEntryMode: DatePickerEntryMode.calendarOnly,
       initialDatePickerMode: DatePickerMode.year,
       lastDate: DateTime.now(),
@@ -141,7 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _buildEmailField() {
     return FormBuilderTextField(
-      name: AuthFields.email.name,
+      name: RegisterFields.email.name,
       decoration: InputDecoration(
         prefixIcon: const Icon(CommunityMaterialIcons.email),
         labelText: ChemSolutionLocalizations.of(context).email,
@@ -157,7 +156,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _buildPasswordField(RegisterPageState state) {
     return FormBuilderTextField(
-      name: AuthFields.password.name,
+      name: RegisterFields.password.name,
       obscureText: state.obscureText,
       validator: passwordValidator(context),
       decoration: InputDecoration(
@@ -184,10 +183,10 @@ class _RegisterPageState extends State<RegisterPage> {
         onPressed: () {
           if (_fbState?.saveAndValidate() ?? false) {
             cubit.register(
-              userEmail: _fbValue[AuthFields.email.name],
-              dateOfBirth: _fbValue[AuthFields.birthay.name],
-              password: _fbValue[AuthFields.password.name],
-              userName: _fbValue[AuthFields.username.name],
+              userEmail: _fbValue[RegisterFields.email.name],
+              dateOfBirth: _fbValue[RegisterFields.birthay.name],
+              password: _fbValue[RegisterFields.password.name],
+              userName: _fbValue[RegisterFields.username.name],
             );
           }
         },

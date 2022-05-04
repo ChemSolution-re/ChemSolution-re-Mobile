@@ -2,7 +2,6 @@ import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../l10n/chem_solution_localizations.dart';
-import '../../../../auth/login_page.dart';
 import 'profile_button.dart';
 
 class UnautorizedView extends StatelessWidget {

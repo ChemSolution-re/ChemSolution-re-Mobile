@@ -13,9 +13,8 @@ import '../../utils/chem_solution_toasts.dart';
 import '../../views/animated_logo.dart';
 import '../../views/chem_solution_app_bar.dart';
 
-enum AuthFields {
+enum ForgetPasswordFields {
   email,
-  password,
 }
 
 class ForgetPasswordPage extends StatefulWidget {
@@ -96,7 +95,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
 
   Widget _buildEmailField() {
     return FormBuilderTextField(
-      name: AuthFields.email.name,
+      name: ForgetPasswordFields.email.name,
       decoration: InputDecoration(
         prefixIcon: const Icon(CommunityMaterialIcons.email),
         labelText: ChemSolutionLocalizations.of(context).email,
@@ -117,7 +116,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
         onPressed: () {
           if (_fbState?.saveAndValidate() ?? false) {
             cubit.restore(
-              _fbValue[AuthFields.email.name],
+              _fbValue[ForgetPasswordFields.email.name],
             );
           }
         },

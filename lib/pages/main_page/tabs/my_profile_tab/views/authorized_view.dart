@@ -5,6 +5,7 @@ import '../../../../../l10n/chem_solution_localizations.dart';
 import '../../../../profile/achievements_page/achievement_page.dart';
 import '../../../../profile/liked_posts_page/liked_posts_page.dart';
 import '../../../../profile/materials_page/materials_page.dart';
+import '../../../../profile/profile_page/profile_page.dart';
 import '../../../../profile/requests_page/requests_page.dart';
 import 'profile_button.dart';
 
@@ -27,7 +28,9 @@ class AuthorizedView extends StatelessWidget {
               ProfileButton.primary(
                 title: ChemSolutionLocalizations.of(context).myProfile,
                 iconData: CommunityMaterialIcons.face_shimmer,
-                onPressed: () {},
+                onPressed: () => Navigator.of(context).push(
+                  ProfilePage.getRoute(),
+                ),
               ),
               ProfileButton.secondary(
                 title: ChemSolutionLocalizations.of(context).saved,

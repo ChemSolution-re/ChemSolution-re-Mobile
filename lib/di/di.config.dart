@@ -14,8 +14,8 @@ import '../bloc/app_control/app_control_cubit.dart' as _i4;
 import '../bloc/auth/forget_password_page/forget_password_page_cubit.dart'
     as _i16;
 import '../bloc/auth/login_page/login_page_cubit.dart' as _i18;
-import '../bloc/auth/register_page/register_page_cubit.dart' as _i21;
-import '../bloc/blog_post_page/blog_post_page_cubit.dart' as _i22;
+import '../bloc/auth/register_page/register_page_cubit.dart' as _i22;
+import '../bloc/blog_post_page/blog_post_page_cubit.dart' as _i23;
 import '../bloc/main_page/cribs_tab/cribs_tab_cubit.dart' as _i15;
 import '../bloc/main_page/elements_tab/elements_tab_cubit.dart' as _i9;
 import '../bloc/main_page/news_and_facts_tab/news_and_facts_tab_cubit.dart'
@@ -23,15 +23,16 @@ import '../bloc/main_page/news_and_facts_tab/news_and_facts_tab_cubit.dart'
 import '../bloc/profile/achievement_page/achievement_page_cubit.dart' as _i12;
 import '../bloc/profile/liked_posts_page/liked_posts_page_cubit.dart' as _i17;
 import '../bloc/profile/materials_page/materials_page_cubit.dart' as _i19;
+import '../bloc/profile/profile_page/profile_page_cubit.dart' as _i21;
 import '../bloc/profile/requests_page/requests_page_cubit.dart' as _i11;
-import '../models/blog_post/blog_post.dart' as _i23;
+import '../models/blog_post/blog_post.dart' as _i24;
 import '../services/auth_service.dart' as _i13;
 import '../services/blog_posts_service.dart' as _i14;
 import '../services/elements_service.dart' as _i8;
 import '../services/preferences_service.dart' as _i3;
 import '../services/profile_service.dart' as _i10;
 import 'modules/api_module.dart'
-    as _i24; // ignore_for_file: unnecessary_lambdas
+    as _i25; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -77,12 +78,14 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i19.MaterialsPageCubit(get<_i10.ProfileService>()));
   gh.factory<_i20.NewsAndFactsTabCubit>(
       () => _i20.NewsAndFactsTabCubit(get<_i14.BlogPostsService>()));
-  gh.factory<_i21.RegisterPageCubit>(
-      () => _i21.RegisterPageCubit(get<_i13.AuthService>()));
-  gh.factoryParam<_i22.BlogPostPageCubit, _i23.BlogPost?, dynamic>(
+  gh.factory<_i21.ProfilePageCubit>(
+      () => _i21.ProfilePageCubit(get<_i10.ProfileService>()));
+  gh.factory<_i22.RegisterPageCubit>(
+      () => _i22.RegisterPageCubit(get<_i13.AuthService>()));
+  gh.factoryParam<_i23.BlogPostPageCubit, _i24.BlogPost?, dynamic>(
       (blogPost, _) =>
-          _i22.BlogPostPageCubit(get<_i14.BlogPostsService>(), blogPost));
+          _i23.BlogPostPageCubit(get<_i14.BlogPostsService>(), blogPost));
   return get;
 }
 
-class _$ApiModule extends _i24.ApiModule {}
+class _$ApiModule extends _i25.ApiModule {}

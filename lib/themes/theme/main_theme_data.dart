@@ -13,15 +13,9 @@ class MainThemeData {
   @protected
   final MainColorThemeData colorTheme;
 
-  /// Should not be used directly.
-  /// Please, use `MainTheme.button(context)`
-  @protected
-  final MainButtonThemeData buttonTheme;
-
   MainThemeData({
     required this.themeData,
     required this.textTheme,
     required this.colorTheme,
-    required this.buttonTheme,
   });
 }

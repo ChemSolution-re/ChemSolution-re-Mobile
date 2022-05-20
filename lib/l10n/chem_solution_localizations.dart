@@ -529,6 +529,18 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Прості речовини'**
   String get simpleMaterials;
+
+  /// No description provided for @coins.
+  ///
+  /// In uk, this message translates to:
+  /// **'Монети'**
+  String get coins;
+
+  /// No description provided for @rating.
+  ///
+  /// In uk, this message translates to:
+  /// **'Рейтинг'**
+  String get rating;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

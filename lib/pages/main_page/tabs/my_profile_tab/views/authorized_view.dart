@@ -2,6 +2,7 @@ import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../l10n/chem_solution_localizations.dart';
+import '../../../../profile/achievements_page/achievement_page.dart';
 import '../../../../profile/liked_posts_page/liked_posts_page.dart';
 import '../../../../profile/materials_page/materials_page.dart';
 import 'profile_button.dart';
@@ -37,7 +38,9 @@ class AuthorizedView extends StatelessWidget {
               ProfileButton.primary(
                 title: ChemSolutionLocalizations.of(context).achievemens,
                 iconData: CommunityMaterialIcons.gold,
-                onPressed: () {},
+                onPressed: () => Navigator.of(context).push(
+                  AchievementsPage.getRoute(),
+                ),
               ),
               ProfileButton.secondary(
                 title: ChemSolutionLocalizations.of(context).requests,

@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 
 import '../api/chem_solution_api_client.dart';
+import '../models/materials/achievement.dart';
 import '../models/materials/material.dart';
 import 'base_service.dart';
 
@@ -13,6 +14,12 @@ class ProfileService extends BaseService {
   Future<List<ChemMaterial>> getMaterials() async {
     return await makeErrorParsedCall(() async {
       return await _apiClient.getMaterials();
+    });
+  }
+
+  Future<List<Achievement>> getAchievements() async {
+    return await makeErrorParsedCall(() async {
+      return await _apiClient.getAchievements();
     });
   }
 }

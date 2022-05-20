@@ -225,4 +225,10 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get simpleMaterials => 'Прості речовини';
+
+  @override
+  String get coins => 'Монети';
+
+  @override
+  String get rating => 'Рейтинг';
 }

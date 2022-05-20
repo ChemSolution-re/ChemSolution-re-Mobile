@@ -156,4 +156,37 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get nothingFind => 'Нічого не знайдено';
+
+  @override
+  String get youShouldBeAuth => 'Для перегляду інформації авторизуйтесь';
+
+  @override
+  String get youShouldBuyElement => 'Для перегляду інформації придбайте елемент';
+
+  @override
+  String get atomicWeight => 'Атомна маса';
+
+  @override
+  String get neutronQuantity => 'Кількість нейтронів';
+
+  @override
+  String get atomicRadius => 'Атомний радіус';
+
+  @override
+  String get electronegativity => 'Електронегативність';
+
+  @override
+  String get energyLevels => 'Енергетичні рівні';
+
+  @override
+  String get meltingTemperature => 'Температура плавлення';
+
+  @override
+  String get boilingTemperature => 'Температура кипіння';
+
+  @override
+  String get valences => 'Валентність';
+
+  @override
+  String get info => 'Загальна інформація';
 }

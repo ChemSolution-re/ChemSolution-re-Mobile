@@ -49,5 +49,16 @@
     "requests": "Запити",
     "openedMaterials": "Відкриті речовини",
     "logout": "Вихід",
-    "nothingFind": "Нічого не знайдено"
+    "nothingFind": "Нічого не знайдено",
+    "youShouldBeAuth": "Для перегляду інформації авторизуйтесь",
+    "youShouldBuyElement": "Для перегляду інформації придбайте елемент",
+    "atomicWeight": "Атомна маса",
+    "neutronQuantity": "Кількість нейтронів",
+    "atomicRadius": "Атомний радіус",
+    "electronegativity": "Електронегативність",
+    "energyLevels": "Енергетичні рівні",
+    "meltingTemperature": "Температура плавлення",
+    "boilingTemperature": "Температура кипіння",
+    "valences": "Валентність",
+    "info": "Загальна інформація"
 }

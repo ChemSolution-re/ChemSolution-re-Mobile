@@ -391,6 +391,72 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Нічого не знайдено'**
   String get nothingFind;
+
+  /// No description provided for @youShouldBeAuth.
+  ///
+  /// In uk, this message translates to:
+  /// **'Для перегляду інформації авторизуйтесь'**
+  String get youShouldBeAuth;
+
+  /// No description provided for @youShouldBuyElement.
+  ///
+  /// In uk, this message translates to:
+  /// **'Для перегляду інформації придбайте елемент'**
+  String get youShouldBuyElement;
+
+  /// No description provided for @atomicWeight.
+  ///
+  /// In uk, this message translates to:
+  /// **'Атомна маса'**
+  String get atomicWeight;
+
+  /// No description provided for @neutronQuantity.
+  ///
+  /// In uk, this message translates to:
+  /// **'Кількість нейтронів'**
+  String get neutronQuantity;
+
+  /// No description provided for @atomicRadius.
+  ///
+  /// In uk, this message translates to:
+  /// **'Атомний радіус'**
+  String get atomicRadius;
+
+  /// No description provided for @electronegativity.
+  ///
+  /// In uk, this message translates to:
+  /// **'Електронегативність'**
+  String get electronegativity;
+
+  /// No description provided for @energyLevels.
+  ///
+  /// In uk, this message translates to:
+  /// **'Енергетичні рівні'**
+  String get energyLevels;
+
+  /// No description provided for @meltingTemperature.
+  ///
+  /// In uk, this message translates to:
+  /// **'Температура плавлення'**
+  String get meltingTemperature;
+
+  /// No description provided for @boilingTemperature.
+  ///
+  /// In uk, this message translates to:
+  /// **'Температура кипіння'**
+  String get boilingTemperature;
+
+  /// No description provided for @valences.
+  ///
+  /// In uk, this message translates to:
+  /// **'Валентність'**
+  String get valences;
+
+  /// No description provided for @info.
+  ///
+  /// In uk, this message translates to:
+  /// **'Загальна інформація'**
+  String get info;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

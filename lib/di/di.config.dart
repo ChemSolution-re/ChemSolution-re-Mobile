@@ -20,8 +20,7 @@ import '../bloc/main_page/cribs_tab/cribs_tab_cubit.dart' as _i12;
 import '../bloc/main_page/elements_tab/elements_tab_cubit.dart' as _i9;
 import '../bloc/main_page/news_and_facts_tab/news_and_facts_tab_cubit.dart'
     as _i16;
-import '../bloc/main_page/profile_tab/liked_posts_page/liked_posts_page_cubit.dart'
-    as _i14;
+import '../bloc/profile/liked_posts_page/liked_posts_page_cubit.dart' as _i14;
 import '../models/blog_post/blog_post.dart' as _i19;
 import '../services/auth_service.dart' as _i10;
 import '../services/blog_posts_service.dart' as _i11;

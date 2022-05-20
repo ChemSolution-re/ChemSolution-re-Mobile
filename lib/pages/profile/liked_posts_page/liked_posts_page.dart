@@ -10,7 +10,7 @@ import '../../../../views/blog_post_tile.dart';
 import '../../../../views/chem_solution_app_bar.dart';
 import '../../../../views/empty_view.dart';
 import '../../../../views/error_view.dart';
-import '../../../bloc/main_page/profile_tab/liked_posts_page/liked_posts_page_cubit.dart';
+import '../../../bloc/profile/liked_posts_page/liked_posts_page_cubit.dart';
 
 enum LikedPostsPageFields { searching }
 

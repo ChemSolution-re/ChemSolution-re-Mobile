@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 import '../../../../models/blog_post/blog_post.dart';
 import '../../../../models/handled_error.dart';
 import '../../../../services/blog_posts_service.dart';
-import '../../../base_cubit.dart';
+import '../../base_cubit.dart';
 
 part 'liked_posts_page_state.dart';
 

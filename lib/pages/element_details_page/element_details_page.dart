@@ -25,7 +25,9 @@ class ElementDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final loc = ChemSolutionLocalizations.of(context);
     return Scaffold(
-      appBar: const ChemSolutionAppBar(),
+      appBar: const ChemSolutionAppBar(
+        isLeadingIconEnabled: true,
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

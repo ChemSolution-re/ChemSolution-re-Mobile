@@ -189,4 +189,40 @@ class ChemSolutionLocalizationsUk extends ChemSolutionLocalizations {
 
   @override
   String get info => 'Загальна інформація';
+
+  @override
+  String get basicOxides => 'Основні оксиди';
+
+  @override
+  String get acidOxides => 'Кислотні оксиди';
+
+  @override
+  String get amphotericOxides => 'Амфотерні оксиди';
+
+  @override
+  String get alkalis => 'Луги';
+
+  @override
+  String get insolubleBases => 'Нерозчинні основи';
+
+  @override
+  String get amphotericBases => 'Амфотерні основи';
+
+  @override
+  String get acids => 'Кислоти';
+
+  @override
+  String get salts => 'Солі';
+
+  @override
+  String get acidicSalts => 'Кислотні солі';
+
+  @override
+  String get basicSalts => 'Основні солі';
+
+  @override
+  String get peroxides => 'Пероксиди';
+
+  @override
+  String get simpleMaterials => 'Прості речовини';
 }

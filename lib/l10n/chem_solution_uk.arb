@@ -60,5 +60,17 @@
     "meltingTemperature": "Температура плавлення",
     "boilingTemperature": "Температура кипіння",
     "valences": "Валентність",
-    "info": "Загальна інформація"
+    "info": "Загальна інформація",
+    "basicOxides": "Основні оксиди",
+    "acidOxides": "Кислотні оксиди",
+    "amphotericOxides": "Амфотерні оксиди",
+    "alkalis": "Луги",
+    "insolubleBases": "Нерозчинні основи",
+    "amphotericBases": "Амфотерні основи",
+    "acids": "Кислоти",
+    "salts": "Солі",
+    "acidicSalts": "Кислотні солі",
+    "basicSalts": "Основні солі",
+    "peroxides": "Пероксиди",
+    "simpleMaterials": "Прості речовини"
 }

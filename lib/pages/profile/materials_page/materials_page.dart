@@ -6,43 +6,43 @@ import 'package:swipeable_page_route/swipeable_page_route.dart';
 import '../../../../di/locator.dart';
 import '../../../../utils/chem_solution_toasts.dart';
 import '../../../../views/animated_logo.dart';
-import '../../../../views/blog_post_tile.dart';
 import '../../../../views/chem_solution_app_bar.dart';
 import '../../../../views/empty_view.dart';
 import '../../../../views/error_view.dart';
-import '../../../bloc/profile/liked_posts_page/liked_posts_page_cubit.dart';
+import '../../../bloc/profile/materials_page/materials_page_cubit.dart';
+import 'views/material_tile.dart';
 
-enum LikedPostsPageFields { searching }
+enum MaterialsPageFields { searching }
 
-class LikedPostsPage extends StatefulWidget {
+class MaterialsPage extends StatefulWidget {
   static PageRoute getRoute() {
     return SwipeablePageRoute(builder: (_) {
       return BlocProvider(
-        create: (_) => locator<LikedPostsPageCubit>(),
-        child: const LikedPostsPage._(),
+        create: (_) => locator<MaterialsPageCubit>(),
+        child: const MaterialsPage._(),
       );
     });
   }
 
-  const LikedPostsPage._({Key? key}) : super(key: key);
+  const MaterialsPage._({Key? key}) : super(key: key);
 
   @override
-  State<LikedPostsPage> createState() => _LikedPostsPageState();
+  State<MaterialsPage> createState() => _MaterialsPageState();
 }
 
-class _LikedPostsPageState extends State<LikedPostsPage> {
+class _MaterialsPageState extends State<MaterialsPage> {
   final _fbKey = GlobalKey<FormBuilderState>();
 
   FormBuilderState? get _fbState => _fbKey.currentState;
   Map<String, dynamic> get _fbValue => _fbState?.value ?? {};
 
-  LikedPostsPageCubit get cubit => context.read();
+  MaterialsPageCubit get cubit => context.read();
 
   void _onStateChanged(
     BuildContext context,
-    LikedPostsPageState state,
+    MaterialsPageState state,
   ) {
-    if (state.status == LikedPostsPageStatus.error) {
+    if (state.status == MaterialsPageStatus.error) {
       ChemSolutionToasts.of(context).showError(
         message: state.error.errorMessage,
       );
@@ -51,7 +51,7 @@ class _LikedPostsPageState extends State<LikedPostsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LikedPostsPageCubit, LikedPostsPageState>(
+    return BlocConsumer<MaterialsPageCubit, MaterialsPageState>(
       listener: _onStateChanged,
       builder: (context, state) {
         return Scaffold(
@@ -62,12 +62,12 @@ class _LikedPostsPageState extends State<LikedPostsPage> {
             searchingWidget: FormBuilder(
               key: _fbKey,
               child: FormBuilderTextField(
-                name: LikedPostsPageFields.searching.name,
+                name: MaterialsPageFields.searching.name,
                 autofocus: true,
                 style: Theme.of(context).textTheme.headline6,
                 onChanged: (_) {
                   _fbState?.save();
-                  cubit.filter(_fbValue[LikedPostsPageFields.searching.name]);
+                  cubit.filter(_fbValue[MaterialsPageFields.searching.name]);
                 },
               ),
             ),
@@ -78,24 +78,23 @@ class _LikedPostsPageState extends State<LikedPostsPage> {
     );
   }
 
-  Widget _buildBody(LikedPostsPageState state) {
+  Widget _buildBody(MaterialsPageState state) {
     switch (state.status) {
-      case LikedPostsPageStatus.loading:
+      case MaterialsPageStatus.loading:
         return const Center(child: AnimatedLogo());
-      case LikedPostsPageStatus.error:
-        return ErrorView(onPressed: cubit.loadPosts);
-      case LikedPostsPageStatus.success:
-        return state.selectedPosts.isEmpty
+      case MaterialsPageStatus.error:
+        return ErrorView(onPressed: cubit.loadMaterials);
+      case MaterialsPageStatus.success:
+        return state.selectedMaterials.isEmpty
             ? const EmptyView()
             : ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (_, index) {
-                  return BlogPostTile(
-                    post: state.selectedPosts[index],
-                    onPressed: cubit.loadPosts,
+                  return MaterialTile(
+                    material: state.selectedMaterials[index],
                   );
                 },
-                itemCount: state.selectedPosts.length,
+                itemCount: state.selectedMaterials.length,
               );
     }
   }

@@ -4,6 +4,7 @@ import 'package:retrofit/retrofit.dart';
 import '../models/blog_post/blog_post.dart';
 import '../models/blog_post/blog_post_info.dart';
 import '../models/elements/chem_element.dart';
+import '../models/materials/material.dart';
 import 'api_constants.dart';
 import 'models/forget_password_request.dart';
 import 'models/login_request.dart';
@@ -71,4 +72,11 @@ abstract class ChemSolutionApiClient {
   Future<void> forgotPassword(
     @Body() ForgetPasswordRequest body,
   );
+
+  ///
+  ///
+  ///
+
+  @GET('/Materials/OwnMaterials')
+  Future<List<ChemMaterial>> getMaterials();
 }

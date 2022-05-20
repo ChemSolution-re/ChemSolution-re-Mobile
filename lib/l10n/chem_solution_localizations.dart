@@ -457,6 +457,78 @@ abstract class ChemSolutionLocalizations {
   /// In uk, this message translates to:
   /// **'Загальна інформація'**
   String get info;
+
+  /// No description provided for @basicOxides.
+  ///
+  /// In uk, this message translates to:
+  /// **'Основні оксиди'**
+  String get basicOxides;
+
+  /// No description provided for @acidOxides.
+  ///
+  /// In uk, this message translates to:
+  /// **'Кислотні оксиди'**
+  String get acidOxides;
+
+  /// No description provided for @amphotericOxides.
+  ///
+  /// In uk, this message translates to:
+  /// **'Амфотерні оксиди'**
+  String get amphotericOxides;
+
+  /// No description provided for @alkalis.
+  ///
+  /// In uk, this message translates to:
+  /// **'Луги'**
+  String get alkalis;
+
+  /// No description provided for @insolubleBases.
+  ///
+  /// In uk, this message translates to:
+  /// **'Нерозчинні основи'**
+  String get insolubleBases;
+
+  /// No description provided for @amphotericBases.
+  ///
+  /// In uk, this message translates to:
+  /// **'Амфотерні основи'**
+  String get amphotericBases;
+
+  /// No description provided for @acids.
+  ///
+  /// In uk, this message translates to:
+  /// **'Кислоти'**
+  String get acids;
+
+  /// No description provided for @salts.
+  ///
+  /// In uk, this message translates to:
+  /// **'Солі'**
+  String get salts;
+
+  /// No description provided for @acidicSalts.
+  ///
+  /// In uk, this message translates to:
+  /// **'Кислотні солі'**
+  String get acidicSalts;
+
+  /// No description provided for @basicSalts.
+  ///
+  /// In uk, this message translates to:
+  /// **'Основні солі'**
+  String get basicSalts;
+
+  /// No description provided for @peroxides.
+  ///
+  /// In uk, this message translates to:
+  /// **'Пероксиди'**
+  String get peroxides;
+
+  /// No description provided for @simpleMaterials.
+  ///
+  /// In uk, this message translates to:
+  /// **'Прості речовини'**
+  String get simpleMaterials;
 }
 
 class _ChemSolutionLocalizationsDelegate extends LocalizationsDelegate<ChemSolutionLocalizations> {

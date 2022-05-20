@@ -44,7 +44,9 @@ class _BlogPostPageState extends State<BlogPostPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const ChemSolutionAppBar(),
+      appBar: const ChemSolutionAppBar(
+        isLeadingIconEnabled: true,
+      ),
       body: _buildBody(),
       floatingActionButton: BlocBuilder<BlogPostPageCubit, BlogPostPageState>(
         builder: (context, state) {

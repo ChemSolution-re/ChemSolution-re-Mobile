@@ -22,7 +22,7 @@ class LikedPostsPageCubit extends BaseCubit<LikedPostsPageState> {
   void handleError(HandledError error) {
     emit(state.copyWith(
       error: error,
-      status: NewsAndFactsTabStatus.error,
+      status: LikedPostsPageStatus.error,
     ));
   }
 
@@ -34,13 +34,13 @@ class LikedPostsPageCubit extends BaseCubit<LikedPostsPageState> {
   }
 
   Future<void> loadPosts() async {
-    emit(state.copyWith(status: NewsAndFactsTabStatus.loading));
+    emit(state.copyWith(status: LikedPostsPageStatus.loading));
     await makeErrorHandledCall(() async {
       final posts = await _blogPostsService.getLikedBlogPost();
       emit(state.copyWith(
         allPosts: posts,
         selectedPosts: posts,
-        status: NewsAndFactsTabStatus.success,
+        status: LikedPostsPageStatus.success,
       ));
     });
   }

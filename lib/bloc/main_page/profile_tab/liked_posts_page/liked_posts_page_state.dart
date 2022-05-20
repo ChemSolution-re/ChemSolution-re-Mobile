@@ -1,20 +1,20 @@
 part of 'liked_posts_page_cubit.dart';
 
-enum NewsAndFactsTabStatus {
+enum LikedPostsPageStatus {
   loading,
   error,
   success,
 }
 
 class LikedPostsPageState extends Equatable {
-  final NewsAndFactsTabStatus status;
+  final LikedPostsPageStatus status;
   final List<BlogPost> allPosts;
   final List<BlogPost> selectedPosts;
   final HandledError error;
   final bool isSearching;
 
   const LikedPostsPageState({
-    this.status = NewsAndFactsTabStatus.loading,
+    this.status = LikedPostsPageStatus.loading,
     this.allPosts = const [],
     this.selectedPosts = const [],
     this.error = const HandledError.empty(),
@@ -22,7 +22,7 @@ class LikedPostsPageState extends Equatable {
   });
 
   LikedPostsPageState copyWith({
-    NewsAndFactsTabStatus? status,
+    LikedPostsPageStatus? status,
     List<BlogPost>? allPosts,
     List<BlogPost>? selectedPosts,
     HandledError? error,

@@ -9,10 +9,12 @@ import '../themes/main_theme.dart';
 
 class BlogPostTile extends StatelessWidget {
   final BlogPost post;
+  final VoidCallback? onPressed;
 
   const BlogPostTile({
     Key? key,
     required this.post,
+    this.onPressed,
   }) : super(key: key);
 
   bool get isLoggedIn => locator<PreferencesService>().isLoggedIn;
@@ -59,9 +61,10 @@ class BlogPostTile extends StatelessWidget {
         ),
         TextButton(
           onPressed: !post.isLocked || isLoggedIn
-              ? () => Navigator.of(context).push(
-                    BlogPostPage.getRoute(post),
-                  )
+              ? () async {
+                  await Navigator.of(context).push(BlogPostPage.getRoute(post));
+                  onPressed?.call();
+                }
               : null,
           child: Text(
             ChemSolutionLocalizations.of(context).readMore,

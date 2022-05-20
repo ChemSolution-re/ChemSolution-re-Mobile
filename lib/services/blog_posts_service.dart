@@ -22,6 +22,12 @@ class BlogPostsService extends BaseService {
     });
   }
 
+  Future<List<BlogPost>> getLikedBlogPost() async {
+    return await makeErrorParsedCall(() async {
+      return await _apiClient.getLikedBlogPost();
+    });
+  }
+
   Future<BlogPostInfo> getBlogPostInfo(BlogPost post) async {
     return await makeErrorParsedCall(() async {
       return await _apiClient.getBlogPostInfo(post.blogPostId);

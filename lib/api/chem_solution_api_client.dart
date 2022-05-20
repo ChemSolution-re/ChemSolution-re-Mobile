@@ -40,6 +40,9 @@ abstract class ChemSolutionApiClient {
     @Path('id') String blogPostId,
   );
 
+  @GET('/BlogPosts/allLiked')
+  Future<List<BlogPost>> getLikedBlogPost();
+
   @POST('/BlogPosts/liked/add/{postId}')
   Future<void> likePost(
     @Path('postId') String blogPostId,

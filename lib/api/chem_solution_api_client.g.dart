@@ -68,6 +68,24 @@ class _ChemSolutionApiClient implements ChemSolutionApiClient {
   }
 
   @override
+  Future<List<BlogPost>> getLikedBlogPost() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<List<dynamic>>(
+        _setStreamType<List<BlogPost>>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/BlogPosts/allLiked',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) => BlogPost.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
+  @override
   Future<void> likePost(blogPostId) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

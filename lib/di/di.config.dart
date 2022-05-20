@@ -12,25 +12,26 @@ import '../api/chem_solution_api_client.dart' as _i7;
 import '../api/interceptors/header_api_interceptor.dart' as _i5;
 import '../bloc/app_control/app_control_cubit.dart' as _i4;
 import '../bloc/auth/forget_password_page/forget_password_page_cubit.dart'
-    as _i15;
-import '../bloc/auth/login_page/login_page_cubit.dart' as _i17;
-import '../bloc/auth/register_page/register_page_cubit.dart' as _i20;
-import '../bloc/blog_post_page/blog_post_page_cubit.dart' as _i21;
-import '../bloc/main_page/cribs_tab/cribs_tab_cubit.dart' as _i14;
+    as _i16;
+import '../bloc/auth/login_page/login_page_cubit.dart' as _i18;
+import '../bloc/auth/register_page/register_page_cubit.dart' as _i21;
+import '../bloc/blog_post_page/blog_post_page_cubit.dart' as _i22;
+import '../bloc/main_page/cribs_tab/cribs_tab_cubit.dart' as _i15;
 import '../bloc/main_page/elements_tab/elements_tab_cubit.dart' as _i9;
 import '../bloc/main_page/news_and_facts_tab/news_and_facts_tab_cubit.dart'
-    as _i19;
-import '../bloc/profile/achievement_page/achievement_page_cubit.dart' as _i11;
-import '../bloc/profile/liked_posts_page/liked_posts_page_cubit.dart' as _i16;
-import '../bloc/profile/materials_page/materials_page_cubit.dart' as _i18;
-import '../models/blog_post/blog_post.dart' as _i22;
-import '../services/auth_service.dart' as _i12;
-import '../services/blog_posts_service.dart' as _i13;
+    as _i20;
+import '../bloc/profile/achievement_page/achievement_page_cubit.dart' as _i12;
+import '../bloc/profile/liked_posts_page/liked_posts_page_cubit.dart' as _i17;
+import '../bloc/profile/materials_page/materials_page_cubit.dart' as _i19;
+import '../bloc/profile/requests_page/requests_page_cubit.dart' as _i11;
+import '../models/blog_post/blog_post.dart' as _i23;
+import '../services/auth_service.dart' as _i13;
+import '../services/blog_posts_service.dart' as _i14;
 import '../services/elements_service.dart' as _i8;
 import '../services/preferences_service.dart' as _i3;
 import '../services/profile_service.dart' as _i10;
 import 'modules/api_module.dart'
-    as _i23; // ignore_for_file: unnecessary_lambdas
+    as _i24; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -56,30 +57,32 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i9.ElementsTabCubit(get<_i8.ElementsService>()));
   gh.factory<_i10.ProfileService>(
       () => _i10.ProfileService(get<_i7.ChemSolutionApiClient>()));
-  gh.factory<_i11.AchievementsPageCubit>(
-      () => _i11.AchievementsPageCubit(get<_i10.ProfileService>()));
-  gh.factory<_i12.AuthService>(
-      () => _i12.AuthService(get<_i7.ChemSolutionApiClient>()));
-  gh.factory<_i13.BlogPostsService>(
-      () => _i13.BlogPostsService(get<_i7.ChemSolutionApiClient>()));
-  gh.factory<_i14.CribsTabCubit>(
-      () => _i14.CribsTabCubit(get<_i13.BlogPostsService>()));
-  gh.factory<_i15.ForgetPasswordPageCubit>(
-      () => _i15.ForgetPasswordPageCubit(get<_i12.AuthService>()));
-  gh.factory<_i16.LikedPostsPageCubit>(
-      () => _i16.LikedPostsPageCubit(get<_i13.BlogPostsService>()));
-  gh.factory<_i17.LoginPageCubit>(() => _i17.LoginPageCubit(
-      get<_i12.AuthService>(), get<_i3.PreferencesService>()));
-  gh.factory<_i18.MaterialsPageCubit>(
-      () => _i18.MaterialsPageCubit(get<_i10.ProfileService>()));
-  gh.factory<_i19.NewsAndFactsTabCubit>(
-      () => _i19.NewsAndFactsTabCubit(get<_i13.BlogPostsService>()));
-  gh.factory<_i20.RegisterPageCubit>(
-      () => _i20.RegisterPageCubit(get<_i12.AuthService>()));
-  gh.factoryParam<_i21.BlogPostPageCubit, _i22.BlogPost?, dynamic>(
+  gh.factory<_i11.RequestsPageCubit>(
+      () => _i11.RequestsPageCubit(get<_i10.ProfileService>()));
+  gh.factory<_i12.AchievementsPageCubit>(
+      () => _i12.AchievementsPageCubit(get<_i10.ProfileService>()));
+  gh.factory<_i13.AuthService>(
+      () => _i13.AuthService(get<_i7.ChemSolutionApiClient>()));
+  gh.factory<_i14.BlogPostsService>(
+      () => _i14.BlogPostsService(get<_i7.ChemSolutionApiClient>()));
+  gh.factory<_i15.CribsTabCubit>(
+      () => _i15.CribsTabCubit(get<_i14.BlogPostsService>()));
+  gh.factory<_i16.ForgetPasswordPageCubit>(
+      () => _i16.ForgetPasswordPageCubit(get<_i13.AuthService>()));
+  gh.factory<_i17.LikedPostsPageCubit>(
+      () => _i17.LikedPostsPageCubit(get<_i14.BlogPostsService>()));
+  gh.factory<_i18.LoginPageCubit>(() => _i18.LoginPageCubit(
+      get<_i13.AuthService>(), get<_i3.PreferencesService>()));
+  gh.factory<_i19.MaterialsPageCubit>(
+      () => _i19.MaterialsPageCubit(get<_i10.ProfileService>()));
+  gh.factory<_i20.NewsAndFactsTabCubit>(
+      () => _i20.NewsAndFactsTabCubit(get<_i14.BlogPostsService>()));
+  gh.factory<_i21.RegisterPageCubit>(
+      () => _i21.RegisterPageCubit(get<_i13.AuthService>()));
+  gh.factoryParam<_i22.BlogPostPageCubit, _i23.BlogPost?, dynamic>(
       (blogPost, _) =>
-          _i21.BlogPostPageCubit(get<_i13.BlogPostsService>(), blogPost));
+          _i22.BlogPostPageCubit(get<_i14.BlogPostsService>(), blogPost));
   return get;
 }
 
-class _$ApiModule extends _i23.ApiModule {}
+class _$ApiModule extends _i24.ApiModule {}

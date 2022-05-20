@@ -6,6 +6,7 @@ import '../models/blog_post/blog_post_info.dart';
 import '../models/elements/chem_element.dart';
 import '../models/materials/achievement.dart';
 import '../models/materials/material.dart';
+import '../models/requests/chem_request.dart';
 import 'api_constants.dart';
 import 'models/forget_password_request.dart';
 import 'models/login_request.dart';
@@ -87,4 +88,11 @@ abstract class ChemSolutionApiClient {
 
   @GET('/Achievements/OwnAchievements')
   Future<List<Achievement>> getAchievements();
+
+  ///
+  /// Requests
+  ///
+
+  @GET('/Requests/OwnRequests')
+  Future<List<ChemRequest>> getRequests();
 }

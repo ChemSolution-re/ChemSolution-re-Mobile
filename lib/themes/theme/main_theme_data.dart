@@ -1,19 +1,19 @@
 part of '../main_theme.dart';
 
-class MainThemeData {
+class ChemSolutionAppThemeData {
   final ThemeData themeData;
 
   /// Should not be used directly.
-  /// Please, use `MainTheme.text(context)`
+  /// Please, use `ChemSolutionAppTheme.text(context)`
   @protected
-  final MainTextThemeData textTheme;
+  final ChemSolutionAppTextThemeData textTheme;
 
   /// Should not be used directly.
-  /// Please, use `MainTheme.color(context)`
+  /// Please, use `ChemSolutionAppTheme.color(context)`
   @protected
-  final MainColorThemeData colorTheme;
+  final ChemSolutionAppColorThemeData colorTheme;
 
-  MainThemeData({
+  ChemSolutionAppThemeData({
     required this.themeData,
     required this.textTheme,
     required this.colorTheme,

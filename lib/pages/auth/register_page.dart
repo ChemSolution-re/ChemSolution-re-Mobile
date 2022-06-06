@@ -81,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   Text(
                     ChemSolutionLocalizations.of(context).register,
-                    style: MainTheme.text(context).authTitle,
+                    style: ChemSolutionAppTheme.text(context).authTitle,
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),

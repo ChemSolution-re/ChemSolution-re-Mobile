@@ -25,7 +25,7 @@ class BlogPostTile extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: MainTheme.color(context).blogPostTileBackground,
+        color: ChemSolutionAppTheme.color(context).blogPostTileBackground,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(

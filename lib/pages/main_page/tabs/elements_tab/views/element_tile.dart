@@ -39,8 +39,8 @@ class ElementTile extends StatelessWidget {
         margin: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: isLocked
-              ? MainTheme.color(context).elementTileBackground
-              : MainTheme.color(context).blockedElement,
+              ? ChemSolutionAppTheme.color(context).elementTileBackground
+              : ChemSolutionAppTheme.color(context).blockedElement,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Row(

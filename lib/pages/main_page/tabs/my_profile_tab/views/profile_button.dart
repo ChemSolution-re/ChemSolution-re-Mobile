@@ -32,9 +32,11 @@ class ProfileButton extends StatelessWidget {
   Color getColor(BuildContext context) {
     switch (_type) {
       case _ProfileButtonType.primary:
-        return MainTheme.color(context).primaryProfileButtonBackground;
+        return ChemSolutionAppTheme.color(context)
+            .primaryProfileButtonBackground;
       case _ProfileButtonType.secondary:
-        return MainTheme.color(context).secondaryProfileButtonBackground;
+        return ChemSolutionAppTheme.color(context)
+            .secondaryProfileButtonBackground;
     }
   }
 
@@ -55,7 +57,7 @@ class ProfileButton extends StatelessWidget {
         ),
         title: Text(
           title,
-          style: MainTheme.text(context).profileButtonTitle,
+          style: ChemSolutionAppTheme.text(context).profileButtonTitle,
         ),
       ),
     );

@@ -16,11 +16,12 @@ extension RequestStatusExt on RequestStatus {
   Color getColorBackground(BuildContext context) {
     switch (this) {
       case RequestStatus.consider:
-        return MainTheme.color(context).primaryProfileButtonBackground;
+        return ChemSolutionAppTheme.color(context)
+            .primaryProfileButtonBackground;
       case RequestStatus.rejected:
-        return MainTheme.color(context).errorToastBackground;
+        return ChemSolutionAppTheme.color(context).errorToastBackground;
       case RequestStatus.accepted:
-        return MainTheme.color(context).successToastBackground;
+        return ChemSolutionAppTheme.color(context).successToastBackground;
     }
   }
 
@@ -29,9 +30,9 @@ extension RequestStatusExt on RequestStatus {
       case RequestStatus.consider:
         return Theme.of(context).colorScheme.primary;
       case RequestStatus.rejected:
-        return MainTheme.color(context).errorToastForeground;
+        return ChemSolutionAppTheme.color(context).errorToastForeground;
       case RequestStatus.accepted:
-        return MainTheme.color(context).successToastForeground;
+        return ChemSolutionAppTheme.color(context).successToastForeground;
     }
   }
 }

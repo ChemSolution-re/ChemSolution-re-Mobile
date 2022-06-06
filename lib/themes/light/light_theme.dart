@@ -7,7 +7,7 @@ part 'src/constants.dart';
 part 'src/text_theme.dart';
 part 'src/theme_data.dart';
 
-class LightThemeData extends MainThemeData {
+class LightThemeData extends ChemSolutionAppThemeData {
   LightThemeData()
       : super(
           themeData: _createTheme(),

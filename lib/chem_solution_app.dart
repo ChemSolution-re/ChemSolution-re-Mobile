@@ -39,14 +39,14 @@ class ChemSolutionApp extends StatelessWidget {
     return BlocConsumer<AppControlCubit, AppControlState>(
       listener: _onStateChanged,
       builder: (context, state) {
-        return MainTheme(
+        return ChemSolutionAppTheme(
           theme: LightThemeData(),
           child: Builder(
             builder: (BuildContext context) {
               return MaterialApp(
                 locale: state.locale,
                 debugShowCheckedModeBanner: false,
-                theme: MainTheme.of(context).themeData,
+                theme: ChemSolutionAppTheme.of(context).themeData,
                 localizationsDelegates:
                     ChemSolutionLocalizations.localizationsDelegates,
                 supportedLocales: ChemSolutionLocalizations.supportedLocales,

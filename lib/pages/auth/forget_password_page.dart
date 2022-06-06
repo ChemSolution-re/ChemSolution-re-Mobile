@@ -77,7 +77,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 children: [
                   Text(
                     ChemSolutionLocalizations.of(context).restorePassword,
-                    style: MainTheme.text(context).authTitle,
+                    style: ChemSolutionAppTheme.text(context).authTitle,
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),

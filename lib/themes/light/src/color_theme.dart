@@ -1,6 +1,6 @@
 part of '../light_theme.dart';
 
-class _LightColorThemeData implements MainColorThemeData {
+class _LightColorThemeData implements ChemSolutionAppColorThemeData {
   const _LightColorThemeData();
 
   @override

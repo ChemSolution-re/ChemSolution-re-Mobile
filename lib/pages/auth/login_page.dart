@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Text(
                     ChemSolutionLocalizations.of(context).auth,
-                    style: MainTheme.text(context).authTitle,
+                    style: ChemSolutionAppTheme.text(context).authTitle,
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),

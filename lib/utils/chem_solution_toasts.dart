@@ -61,11 +61,12 @@ class ChemSolutionToasts {
     final snackBar = _buildSnackBar(
       icon: Icon(
         Icons.check_circle_rounded,
-        color: MainTheme.color(context).successToastForeground,
+        color: ChemSolutionAppTheme.color(context).successToastForeground,
       ),
       message: message,
-      textColor: MainTheme.color(context).successToastForeground,
-      backgroundColor: MainTheme.color(context).successToastBackground,
+      textColor: ChemSolutionAppTheme.color(context).successToastForeground,
+      backgroundColor:
+          ChemSolutionAppTheme.color(context).successToastBackground,
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
@@ -76,11 +77,11 @@ class ChemSolutionToasts {
     final snackBar = _buildSnackBar(
       icon: Icon(
         Icons.error_outline,
-        color: MainTheme.color(context).errorToastForeground,
+        color: ChemSolutionAppTheme.color(context).errorToastForeground,
       ),
       message: message,
-      textColor: MainTheme.color(context).errorToastForeground,
-      backgroundColor: MainTheme.color(context).errorToastBackground,
+      textColor: ChemSolutionAppTheme.color(context).errorToastForeground,
+      backgroundColor: ChemSolutionAppTheme.color(context).errorToastBackground,
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }

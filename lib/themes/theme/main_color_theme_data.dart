@@ -1,6 +1,6 @@
 part of '../main_theme.dart';
 
-abstract class MainColorThemeData {
+abstract class ChemSolutionAppColorThemeData {
   Color get primaryBackground;
   Color get errorToastForeground;
   Color get errorToastBackground;

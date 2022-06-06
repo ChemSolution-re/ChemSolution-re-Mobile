@@ -36,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MainTheme.color(context).primaryBackground,
+      backgroundColor: ChemSolutionAppTheme.color(context).primaryBackground,
       body: const Center(
         child: AnimatedLogo(),
       ),

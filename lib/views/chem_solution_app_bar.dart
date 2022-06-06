@@ -40,7 +40,7 @@ class _ChemSolutionAppBarState extends State<ChemSolutionAppBar> {
           : widget.titleWidget ??
               Text(
                 ChemSolutionLocalizations.of(context).appName,
-                style: MainTheme.text(context).appTitle,
+                style: ChemSolutionAppTheme.text(context).appTitle,
               ),
       actions: [
         if (onSearchIconPressed != null)
